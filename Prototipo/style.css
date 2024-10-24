@@ -1,0 +1,32 @@
+.table-container {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .form-control:read-only {
+            background-color: #e9ecef;
+        }
+
+        .invalid-feedback {
+            display: none;
+        }
+
+        .was-validated .form-control:invalid~.invalid-feedback {
+            display: block;
+        }
+
+        .item-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+
+        }
+        .icon-shape {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 3rem;
+            width: 3rem;
+            font-size: 1.25rem;
+        }
