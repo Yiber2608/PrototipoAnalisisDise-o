@@ -22,7 +22,7 @@ const table = new Tabulator("#items-table", {
 
                 return `
                     <button class="btn btn-primary btn-sm" data-bs-toggle="modal" 
-                            data-bs-target="#verItemModal">
+                            data-item='${JSON.stringify(item)}'>
                         <i class="bi bi-eye mirar-icon mx-1"></i>
                     </button>
                     <button class="btn btn-success btn-sm editar-icon" 
@@ -165,6 +165,11 @@ $(document).on('click', '.editar-icon', function () {
     abrirModalEdicion(itemData);
 });
 
+// Asignar la función al botón de editar
+$(document).on('click', '.mirar-icon', function () {
+    const itemData = $(this).closest('button').data('item');
+    abrirModalVer(itemData);
+});
 
 // Referencias a los botones y archivo de input
 const inputExcel = document.getElementById('inputExcel');
@@ -206,6 +211,136 @@ btnExportar.addEventListener('click', () => {
     // Generar archivo Excel y descargarlo
     XLSX.writeFile(workbook, 'datos_exportados.xlsx');
 });
+
+
+//Carga los Formularios de Descuento, Impuesto y Categoria
+document.addEventListener('DOMContentLoaded', function () {
+    const formularios = {
+        descuento: document.getElementById('formularioDescuento'),
+        impuesto: document.getElementById('formularioImpuesto'),
+        categoria: document.getElementById('formularioCategoria')
+    };
+
+    Object.values(formularios).forEach(formulario => {
+        formulario.addEventListener('submit', function (evento) {
+            evento.preventDefault();
+            evento.stopPropagation();
+
+            if (!formulario.checkValidity()) {
+                evento.stopPropagation();
+            } else {
+                const datosFormulario = new FormData(formulario);
+                const datos = Object.fromEntries(datosFormulario.entries());
+
+                console.log('Formulario enviado:', datos);
+                // agregar la lógica para enviar los datos al servidor
+                const modal = bootstrap.Modal.getInstance(formulario.closest('.modal'));
+                modal.hide();
+            }
+
+            formulario.classList.add('was-validated');
+        });
+    });
+
+    // Validación personalizada para fechas
+    const pares = [
+        { inicio: 'fechaInicio', fin: 'fechaFin' },
+        { inicio: 'fechaInicioImpuesto', fin: 'fechaFinImpuesto' }
+    ];
+
+    pares.forEach(par => {
+        const inputInicio = document.getElementById(par.inicio);
+        const inputFin = document.getElementById(par.fin);
+
+        if (inputInicio && inputFin) {
+            inputFin.addEventListener('change', function () {
+                if (inputInicio.value && inputFin.value) {
+                    if (new Date(inputFin.value) <= new Date(inputInicio.value)) {
+                        inputFin.setCustomValidity('La fecha de fin debe ser posterior a la fecha de inicio');
+                    } else {
+                        inputFin.setCustomValidity('');
+                    }
+                }
+            });
+
+            inputInicio.addEventListener('change', function () {
+                inputFin.value = '';
+                inputFin.setCustomValidity('');
+            });
+        }
+    });
+
+    // Validación del código DIAN
+    const inputCodigoDIAN = document.getElementById('codigoDIAN');
+    if (inputCodigoDIAN) {
+        inputCodigoDIAN.addEventListener('input', function () {
+            if (this.validity.patternMismatch) {
+                this.setCustomValidity('El código DIAN debe tener al menos 4 dígitos numéricos');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+    }
+});
+
+//Agrega la data a los campos de todos lo modales de Ver
+function abrirModalVer(item) {
+    if (item.tipo === 'Producto') {
+        $('#verProductoModal').modal('show');
+        $('#verNombreProducto').val(item.nombre);
+        $('#verCodigoUnicoProducto').val(item.codigoUnico);
+        $('#verCodigoGtin').val(item.codigoGtin || '');
+        $('#verCategoriaProducto').val(item.categoria);
+        $('#verPrecioBase').val(item.precioBase);
+        $('#verImpuestos').val(item.impuestos);
+        $('#verPrecioVenta').val(item.precioVenta);
+        $('#verUnidadMedida').val(item.unidadMedida);
+        $('#verDescripcionProducto').val(item.descripcion);
+        $('#verCantidadInicial').val(item.cantidadInicial || 0);
+        $('#verCodigoUNSPSC').val(item.codigoUNSPSC || '');
+        $('#imagenProducto').css('background-image', `url(${item.imagen || '/placeholder-image.jpg'})`);
+    }
+    if (item.tipo === 'Servicio') {
+        $('#verServicioModal').modal('show');
+        $('#verNombreServicio').val(item.nombre);
+        $('#verCodigoUnicoServicio').val(item.codigoUnico);
+        $('#verCodigoUNSPSCServicio').val(item.codigoUNSPSC || '');
+        $('#verCategoriaServicio').val(item.categoria);
+        $('#verPrecioBaseServicio').val(item.precioBase);
+        $('#verImpuestosAplicablesServicio').val(item.impuestos);
+        $('#verPrecioVentaServicio').val(item.precioVenta);
+        $('#verDescripcionServicio').val(item.descripcion);
+        $('#verCodigoGtinServicios').val(item.codigoGtin);
+        $('#imagenServicio').css('background-image', `url(${item.imagen || '/placeholder-image.jpg'})`);
+    }
+    if (item.tipo === 'Combo') {
+        $('#verComboModal').modal('show');
+        $('#verNombreCombo').val(item.nombre || '');
+        $('#verCodigoUnicoCombo').val(item.codigoUnico || '');
+        $('#verPrecioBaseCombo').val(item.precioBase || 0);
+        $('#verCategoriaCombo').val(item.categoria || '');
+        $('#verPrecioVentaCombo').val(item.precioVenta || 0);
+        $('#verImpuestosAplicablesCombo').val(item.impuestos || '');
+        $('#verDescripcionCombo').val(item.descripcion || '');
+        $('#imagenCombo').css('background-image', `url(${item.imagen || '/placeholder-image.jpg'})`);
+
+        // Limpiar la lista de ítems del combo
+        $('#verListaItemsCombo').empty();
+
+        // Verificar si el campo 'items' existe y es un array
+        if (Array.isArray(item.items)) {
+            item.items.forEach((item) => {
+                $('#verListaItemsCombo').append(`
+                    <li class="list-group-item">
+                        ${item.nombre} - Cantidad: ${item.cantidad}
+                    </li>
+                `);
+            });
+        } else {
+            $('#verListaItemsCombo').append('<li class="list-group-item">No hay ítems en este combo.</li>');
+        }
+    }
+}
 
 
 
