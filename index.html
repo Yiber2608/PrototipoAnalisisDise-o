@@ -89,7 +89,8 @@
                                 <div class="row g-3">
                                     <!-- Fila 1: Nuevo Ítem y Importar/Exportar -->
                                     <div class="col-12 d-flex justify-content-between align-items-center">
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarItemModal">
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#agregarItemModal">
                                             <i class="bi bi-plus-circle me-2"></i>Nuevo Ítem
                                         </button>
                                         <div class="btn-group" role="group" aria-label="Importar/Exportar">
@@ -117,17 +118,20 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Columna derecha: Acciones adicionales -->
                             <div class="col-lg-2">
                                 <div class="d-grid gap-2">
-                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalDescuento">
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modalDescuento">
                                         <i class="bi bi-percent me-2"></i>Descuentos y Recargos
                                     </button>
-                                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalImpuesto">
+                                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                                        data-bs-target="#modalImpuesto">
                                         <i class="bi bi-cash-coin me-2"></i>Impuestos
                                     </button>
-                                    <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalCategoria">
+                                    <button type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                                        data-bs-target="#modalCategoria">
                                         <i class="bi bi-tags me-2"></i>Categorías
                                     </button>
                                 </div>
@@ -204,199 +208,203 @@
         </div>
     </div>
 
-<!-- Modal para ver Producto -->
-<div class="modal fade" id="verProductoModal" tabindex="-1" aria-labelledby="verProductoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <h5 class="modal-title" id="verProductoModalLabel">Ver Producto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="image-container mb-3">
-                            <div id="imagenProducto" class="product-image"></div>
-                        </div>
-                        <div class="description-box">
-                            <h6 class="mb-2">Descripción</h6>
-                            <p id="verDescripcionProducto"></p>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="verNombreProducto" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="verNombreProducto" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verCodigoUnicoProducto" class="form-label">Código Único</label>
-                                    <input type="text" class="form-control" id="verCodigoUnicoProducto" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verCodigoGtin" class="form-label">Código GTIN</label>
-                                    <input type="text" class="form-control" id="verCodigoGtin" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verCategoriaProducto" class="form-label">Categoría</label>
-                                    <input type="text" class="form-control" id="verCategoriaProducto" readonly>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="verPrecioBase" class="form-label">Precio Base</label>
-                                    <input type="text" class="form-control" id="verPrecioBase" readonly>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="verImpuestos" class="form-label">Impuestos</label>
-                                    <input type="text" class="form-control" id="verImpuestos" readonly>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="verPrecioVenta" class="form-label">Precio Venta</label>
-                                    <input type="text" class="form-control" id="verPrecioVenta" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verUnidadMedida" class="form-label">Unidad de Medida</label>
-                                    <input type="text" class="form-control" id="verUnidadMedida" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verCantidadInicial" class="form-label">Cantidad Inicial</label>
-                                    <input type="text" class="form-control" id="verCantidadInicial" readonly>
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="verCodigoUNSPSC" class="form-label">Código UNSPSC</label>
-                                    <input type="text" class="form-control" id="verCodigoUNSPSC" readonly>
-                                </div>
+    <!-- Modal para ver Producto -->
+    <div class="modal fade" id="verProductoModal" tabindex="-1" aria-labelledby="verProductoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title" id="verProductoModalLabel">Ver Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="image-container mb-3">
+                                <div id="imagenProducto" class="product-image"></div>
                             </div>
-                        </form>
+                            <div class="description-box">
+                                <h6 class="mb-2">Descripción</h6>
+                                <p id="verDescripcionProducto"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="verNombreProducto" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="verNombreProducto" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verCodigoUnicoProducto" class="form-label">Código Único</label>
+                                        <input type="text" class="form-control" id="verCodigoUnicoProducto" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verCodigoGtin" class="form-label">Código GTIN</label>
+                                        <input type="text" class="form-control" id="verCodigoGtin" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verCategoriaProducto" class="form-label">Categoría</label>
+                                        <input type="text" class="form-control" id="verCategoriaProducto" readonly>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="verPrecioBase" class="form-label">Precio Base</label>
+                                        <input type="text" class="form-control" id="verPrecioBase" readonly>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="verImpuestos" class="form-label">Impuestos</label>
+                                        <input type="text" class="form-control" id="verImpuestos" readonly>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="verPrecioVenta" class="form-label">Precio Venta</label>
+                                        <input type="text" class="form-control" id="verPrecioVenta" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verUnidadMedida" class="form-label">Unidad de Medida</label>
+                                        <input type="text" class="form-control" id="verUnidadMedida" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verCantidadInicial" class="form-label">Cantidad Inicial</label>
+                                        <input type="text" class="form-control" id="verCantidadInicial" readonly>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="verCodigoUNSPSC" class="form-label">Código UNSPSC</label>
+                                        <input type="text" class="form-control" id="verCodigoUNSPSC" readonly>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Tab Modal para ver Servicio -->
-<div class="modal fade" id="verServicioModal" tabindex="-1" aria-labelledby="verServicioModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-success">
-                <h5 class="modal-title" id="verServicioModalLabel">Ver Servicio</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="image-container mb-3">
-                            <div id="imagenServicio" class="product-image"></div>
-                        </div>
-                        <div class="description-box">
-                            <h6 class="mb-2">Descripción</h6>
-                            <p id="verDescripcionServicio"></p>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="verNombreServicio" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="verNombreServicio" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verCodigoUnicoServicio" class="form-label">Código Único</label>
-                                    <input type="text" class="form-control" id="verCodigoUnicoServicio" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verCodigoUNSPSCServicio" class="form-label">Código UNSPSC</label>
-                                    <input type="text" class="form-control" id="verCodigoUNSPSCServicio" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verCategoriaServicio" class="form-label">Categoría</label>
-                                    <input type="text" class="form-control" id="verCategoriaServicio" readonly>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="verPrecioBaseServicio" class="form-label">Precio Base</label>
-                                    <input type="text" class="form-control" id="verPrecioBaseServicio" readonly>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="verImpuestosAplicablesServicio" class="form-label">Impuestos</label>
-                                    <input type="text" class="form-control" id="verImpuestosAplicablesServicio" readonly>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="verPrecioVentaServicio" class="form-label">Precio Venta</label>
-                                    <input type="text" class="form-control" id="verPrecioVentaServicio" readonly>
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="verCodigoGtinServicios" class="form-label">Código GTIN</label>
-                                    <input type="text" class="form-control" id="verCodigoGtinServicios" readonly>
-                                </div>
+    <!-- Tab Modal para ver Servicio -->
+    <div class="modal fade" id="verServicioModal" tabindex="-1" aria-labelledby="verServicioModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success">
+                    <h5 class="modal-title" id="verServicioModalLabel">Ver Servicio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="image-container mb-3">
+                                <div id="imagenServicio" class="product-image"></div>
                             </div>
-                        </form>
+                            <div class="description-box">
+                                <h6 class="mb-2">Descripción</h6>
+                                <p id="verDescripcionServicio"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="verNombreServicio" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="verNombreServicio" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verCodigoUnicoServicio" class="form-label">Código Único</label>
+                                        <input type="text" class="form-control" id="verCodigoUnicoServicio" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verCodigoUNSPSCServicio" class="form-label">Código UNSPSC</label>
+                                        <input type="text" class="form-control" id="verCodigoUNSPSCServicio" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verCategoriaServicio" class="form-label">Categoría</label>
+                                        <input type="text" class="form-control" id="verCategoriaServicio" readonly>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="verPrecioBaseServicio" class="form-label">Precio Base</label>
+                                        <input type="text" class="form-control" id="verPrecioBaseServicio" readonly>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="verImpuestosAplicablesServicio" class="form-label">Impuestos</label>
+                                        <input type="text" class="form-control" id="verImpuestosAplicablesServicio"
+                                            readonly>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="verPrecioVentaServicio" class="form-label">Precio Venta</label>
+                                        <input type="text" class="form-control" id="verPrecioVentaServicio" readonly>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="verCodigoGtinServicios" class="form-label">Código GTIN</label>
+                                        <input type="text" class="form-control" id="verCodigoGtinServicios" readonly>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Tab Modal para ver Combo -->
-<div class="modal fade" id="verComboModal" tabindex="-1" aria-labelledby="verComboModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-info">
-                <h5 class="modal-title" id="verComboModalLabel">Ver Combo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="image-container mb-3">
-                            <div id="imagenCombo" class="product-image"></div>
-                        </div>
-                        <div class="description-box">
-                            <h6 class="mb-2">Descripción</h6>
-                            <p id="verDescripcionCombo"></p>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="verNombreCombo" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="verNombreCombo" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verCodigoUnicoCombo" class="form-label">Código Único</label>
-                                    <input type="text" class="form-control" id="verCodigoUnicoCombo" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verPrecioBaseCombo" class="form-label">Precio Base</label>
-                                    <input type="text" class="form-control" id="verPrecioBaseCombo" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verPrecioVentaCombo" class="form-label">Precio Venta</label>
-                                    <input type="text" class="form-control" id="verPrecioVentaCombo" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verImpuestosAplicablesCombo" class="form-label">Impuestos</label>
-                                    <input type="text" class="form-control" id="verImpuestosAplicablesCombo" readonly>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="verCategoriaCombo" class="form-label">Categoría</label>
-                                    <input type="text" class="form-control" id="verCategoriaCombo" readonly>
-                                </div>
-                                <div class="col-md-12">
-                                    <h6 class="mb-2">Ítems del Combo</h6>
-                                    <ul class="list-group" id="verListaItemsCombo"></ul>
-                                </div>
+    <!-- Tab Modal para ver Combo -->
+    <div class="modal fade" id="verComboModal" tabindex="-1" aria-labelledby="verComboModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h5 class="modal-title" id="verComboModalLabel">Ver Combo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="image-container mb-3">
+                                <div id="imagenCombo" class="product-image"></div>
                             </div>
-                        </form>
+                            <div class="description-box">
+                                <h6 class="mb-2">Descripción</h6>
+                                <p id="verDescripcionCombo"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="verNombreCombo" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="verNombreCombo" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verCodigoUnicoCombo" class="form-label">Código Único</label>
+                                        <input type="text" class="form-control" id="verCodigoUnicoCombo" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verPrecioBaseCombo" class="form-label">Precio Base</label>
+                                        <input type="text" class="form-control" id="verPrecioBaseCombo" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verPrecioVentaCombo" class="form-label">Precio Venta</label>
+                                        <input type="text" class="form-control" id="verPrecioVentaCombo" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verImpuestosAplicablesCombo" class="form-label">Impuestos</label>
+                                        <input type="text" class="form-control" id="verImpuestosAplicablesCombo"
+                                            readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="verCategoriaCombo" class="form-label">Categoría</label>
+                                        <input type="text" class="form-control" id="verCategoriaCombo" readonly>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h6 class="mb-2">Ítems del Combo</h6>
+                                        <ul class="list-group" id="verListaItemsCombo"></ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-    
+
     <!-- Modal de Descuentos y Recargos -->
     <div class="modal fade" id="modalDescuento" tabindex="-1" aria-labelledby="etiquetaModalDescuento"
         aria-hidden="true">
@@ -409,72 +417,218 @@
                         aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="formularioDescuento" class="needs-validation" novalidate>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="tipo" class="form-label">Tipo de descuento/recargo</label>
-                                <select class="form-select" id="tipo" name="tipo" required>
-                                    <option value="">Seleccione...</option>
-                                    <option value="porcentaje">Porcentaje</option>
-                                    <option value="fijo">Valor fijo</option>
-                                </select>
-                                <div class="invalid-feedback">Por favor, seleccione un tipo.</div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="codigo" class="form-label">Código del descuento</label>
-                                <input type="text" class="form-control" id="codigo" name="codigo" required
-                                    pattern="[A-Za-z0-9]{3,}"
-                                    title="El código debe tener al menos 3 caracteres alfanuméricos">
-                                <div class="invalid-feedback">Por favor, ingrese un código válido (mínimo 3 caracteres
-                                    alfanuméricos).</div>
-                            </div>
-                        </div>
+                    <!-- Tabs de navegación -->
+                    <ul class="nav nav-tabs" id="descuentoTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="crear-descuento-tab" data-bs-toggle="tab"
+                                data-bs-target="#crear-descuento" type="button" role="tab"
+                                aria-controls="crear-descuento" aria-selected="true">Crear Descuento/Recargo</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="editar-descuento-tab" data-bs-toggle="tab"
+                                data-bs-target="#editar-descuento" type="button" role="tab"
+                                aria-controls="editar-descuento" aria-selected="false">Editar Descuento/Recargo</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="eliminar-descuento-tab" data-bs-toggle="tab"
+                                data-bs-target="#eliminar-descuento" type="button" role="tab"
+                                aria-controls="eliminar-descuento" aria-selected="false">Eliminar
+                                Descuento/Recargo</button>
+                        </li>
+                    </ul>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="valor" class="form-label">Valor del descuento/recargo</label>
-                                <input type="number" class="form-control" id="valor" name="valor" required min="0"
-                                    step="0.01">
-                                <div class="invalid-feedback">Por favor, ingrese un valor válido (mayor o igual a 0).
+                    <!-- Contenido de las tabs -->
+                    <div class="tab-content mt-3" id="descuentoTabsContent">
+                        <!-- Tab Crear Descuento/Recargo -->
+                        <div class="tab-pane fade show active" id="crear-descuento" role="tabpanel"
+                            aria-labelledby="crear-descuento-tab">
+                            <form id="formularioCrearDescuento" class="needs-validation" novalidate>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="tipoCrear" class="form-label">Tipo de descuento/recargo</label>
+                                        <select class="form-select" id="tipoCrear" name="tipoCrear" required>
+                                            <option value="">Seleccione...</option>
+                                            <option value="porcentaje">Porcentaje</option>
+                                            <option value="fijo">Valor fijo</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor, seleccione un tipo.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="codigoCrear" class="form-label">Código del descuento</label>
+                                        <input type="text" class="form-control" id="codigoCrear" name="codigoCrear"
+                                            required pattern="[A-Za-z0-9]{3,}"
+                                            title="El código debe tener al menos 3 caracteres alfanuméricos">
+                                        <div class="invalid-feedback">Por favor, ingrese un código válido (mínimo 3
+                                            caracteres alfanuméricos).</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="nombre" class="form-label">Nombre del descuento/recargo</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required
-                                    minlength="3">
-                                <div class="invalid-feedback">Por favor, ingrese un nombre (mínimo 3 caracteres).</div>
-                            </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="valorCrear" class="form-label">Valor del descuento/recargo</label>
+                                        <input type="number" class="form-control" id="valorCrear" name="valorCrear"
+                                            required min="0" step="0.01">
+                                        <div class="invalid-feedback">Por favor, ingrese un valor válido (mayor o igual
+                                            a 0).</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="nombreCrear" class="form-label">Nombre del descuento/recargo</label>
+                                        <input type="text" class="form-control" id="nombreCrear" name="nombreCrear"
+                                            required minlength="3">
+                                        <div class="invalid-feedback">Por favor, ingrese un nombre (mínimo 3
+                                            caracteres).</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="descripcionCrear" class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="descripcionCrear" name="descripcionCrear"
+                                        rows="3"></textarea>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fechaInicioCrear" class="form-label">Fecha de inicio</label>
+                                        <input type="date" class="form-control" id="fechaInicioCrear"
+                                            name="fechaInicioCrear" required>
+                                        <div class="invalid-feedback">Por favor, seleccione una fecha de inicio válida.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fechaFinCrear" class="form-label">Fecha de fin</label>
+                                        <input type="date" class="form-control" id="fechaFinCrear" name="fechaFinCrear"
+                                            required>
+                                        <div class="invalid-feedback">Por favor, seleccione una fecha de fin válida.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="condicionesCrear" class="form-label">Condiciones de aplicación</label>
+                                    <textarea class="form-control" id="condicionesCrear" name="condicionesCrear"
+                                        rows="3"></textarea>
+                                </div>
+
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary">Crear Descuento/Recargo</button>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="descripcion" class="form-label">Descripción</label>
-                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+                        <!-- Tab Editar Descuento/Recargo -->
+                        <div class="tab-pane fade" id="editar-descuento" role="tabpanel"
+                            aria-labelledby="editar-descuento-tab">
+                            <form id="formularioEditarDescuento" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="seleccionarDescuentoEditar" class="form-label">Seleccionar
+                                        Descuento/Recargo</label>
+                                    <select class="form-select" id="seleccionarDescuentoEditar"
+                                        name="seleccionarDescuentoEditar" required>
+                                        <option value="">Seleccione un descuento/recargo</option>
+                                        <!-- Aquí se cargarían dinámicamente los descuentos/recargos existentes -->
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, seleccione un descuento/recargo para
+                                        editar.</div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="tipoEditar" class="form-label">Tipo de descuento/recargo</label>
+                                        <select class="form-select" id="tipoEditar" name="tipoEditar" required>
+                                            <option value="">Seleccione...</option>
+                                            <option value="porcentaje">Porcentaje</option>
+                                            <option value="fijo">Valor fijo</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor, seleccione un tipo.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="codigoEditar" class="form-label">Código del descuento</label>
+                                        <input type="text" class="form-control" id="codigoEditar" name="codigoEditar"
+                                            required pattern="[A-Za-z0-9]{3,}"
+                                            title="El código debe tener al menos 3 caracteres alfanuméricos">
+                                        <div class="invalid-feedback">Por favor, ingrese un código válido (mínimo 3
+                                            caracteres alfanuméricos).</div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="valorEditar" class="form-label">Valor del descuento/recargo</label>
+                                        <input type="number" class="form-control" id="valorEditar" name="valorEditar"
+                                            required min="0" step="0.01">
+                                        <div class="invalid-feedback">Por favor, ingrese un valor válido (mayor o igual
+                                            a 0).</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="nombreEditar" class="form-label">Nombre del
+                                            descuento/recargo</label>
+                                        <input type="text" class="form-control" id="nombreEditar" name="nombreEditar"
+                                            required minlength="3">
+                                        <div class="invalid-feedback">Por favor, ingrese un nombre (mínimo 3
+                                            caracteres).</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="descripcionEditar" class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="descripcionEditar" name="descripcionEditar"
+                                        rows="3"></textarea>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fechaInicioEditar" class="form-label">Fecha de inicio</label>
+                                        <input type="date" class="form-control" id="fechaInicioEditar"
+                                            name="fechaInicioEditar" required>
+                                        <div class="invalid-feedback">Por favor, seleccione una fecha de inicio válida.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fechaFinEditar" class="form-label">Fecha de fin</label>
+                                        <input type="date" class="form-control" id="fechaFinEditar"
+                                            name="fechaFinEditar" required>
+                                        <div class="invalid-feedback">Por favor, seleccione una fecha de fin válida.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="condicionesEditar" class="form-label">Condiciones de aplicación</label>
+                                    <textarea class="form-control" id="condicionesEditar" name="condicionesEditar"
+                                        rows="3"></textarea>
+                                </div>
+
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-warning">Actualizar Descuento/Recargo</button>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="fechaInicio" class="form-label">Fecha de inicio</label>
-                                <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" required>
-                                <div class="invalid-feedback">Por favor, seleccione una fecha de inicio válida.</div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="fechaFin" class="form-label">Fecha de fin</label>
-                                <input type="date" class="form-control" id="fechaFin" name="fechaFin" required>
-                                <div class="invalid-feedback">Por favor, seleccione una fecha de fin válida.</div>
-                            </div>
+                        <!-- Tab Eliminar Descuento/Recargo -->
+                        <div class="tab-pane fade" id="eliminar-descuento" role="tabpanel"
+                            aria-labelledby="eliminar-descuento-tab">
+                            <form id="formularioEliminarDescuento" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="seleccionarDescuentoEliminar" class="form-label">Seleccionar
+                                        Descuento/Recargo a Eliminar</label>
+                                    <select class="form-select" id="seleccionarDescuentoEliminar"
+                                        name="seleccionarDescuentoEliminar" required>
+                                        <option value="">Seleccione un descuento/recargo</option>
+                                        <!-- Aquí se cargarían dinámicamente los descuentos/recargos existentes -->
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, seleccione un descuento/recargo para
+                                        eliminar.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="text-danger">¿Está seguro de que desea eliminar este descuento/recargo?
+                                        Esta acción no se puede deshacer.</p>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-danger">Eliminar Descuento/Recargo</button>
+                                </div>
+                            </form>
                         </div>
-
-                        <div class="mb-3">
-                            <label for="condiciones" class="form-label">Condiciones de aplicación</label>
-                            <textarea class="form-control" id="condiciones" name="condiciones" rows="3"></textarea>
-                        </div>
-
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-secondary me-2"
-                                data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -491,117 +645,304 @@
                         aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="formularioImpuesto" class="needs-validation" novalidate>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="codigoImpuesto" class="form-label">Código de impuesto</label>
-                                <input type="text" class="form-control" id="codigoImpuesto" name="codigoImpuesto"
-                                    required pattern="[A-Za-z0-9]{3,}"
-                                    title="El código debe tener al menos 3 caracteres alfanuméricos">
-                                <div class="invalid-feedback">Por favor, ingrese un código válido (mínimo 3 caracteres
-                                    alfanuméricos).</div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="nombreImpuesto" class="form-label">Nombre del impuesto</label>
-                                <input type="text" class="form-control" id="nombreImpuesto" name="nombreImpuesto"
-                                    required minlength="3">
-                                <div class="invalid-feedback">Por favor, ingrese un nombre (mínimo 3 caracteres).</div>
-                            </div>
+                    <!-- Tabs de navegación -->
+                    <ul class="nav nav-tabs" id="impuestoTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="crear-impuesto-tab" data-bs-toggle="tab"
+                                data-bs-target="#crear-impuesto" type="button" role="tab" aria-controls="crear-impuesto"
+                                aria-selected="true">Crear Impuesto</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="editar-impuesto-tab" data-bs-toggle="tab"
+                                data-bs-target="#editar-impuesto" type="button" role="tab"
+                                aria-controls="editar-impuesto" aria-selected="false">Editar Impuesto</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="eliminar-impuesto-tab" data-bs-toggle="tab"
+                                data-bs-target="#eliminar-impuesto" type="button" role="tab"
+                                aria-controls="eliminar-impuesto" aria-selected="false">Eliminar Impuesto</button>
+                        </li>
+                    </ul>
+
+                    <!-- Contenido de las tabs -->
+                    <div class="tab-content mt-3" id="impuestoTabsContent">
+                        <!-- Tab Crear Impuesto -->
+                        <div class="tab-pane fade show active" id="crear-impuesto" role="tabpanel"
+                            aria-labelledby="crear-impuesto-tab">
+                            <form id="formularioCrearImpuesto" class="needs-validation" novalidate>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="codigoImpuestoCrear" class="form-label">Código de impuesto</label>
+                                        <input type="text" class="form-control" id="codigoImpuestoCrear"
+                                            name="codigoImpuestoCrear" required pattern="[A-Za-z0-9]{3,}"
+                                            title="El código debe tener al menos 3 caracteres alfanuméricos">
+                                        <div class="invalid-feedback">Por favor, ingrese un código válido (mínimo 3
+                                            caracteres alfanuméricos).</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="nombreImpuestoCrear" class="form-label">Nombre del impuesto</label>
+                                        <input type="text" class="form-control" id="nombreImpuestoCrear"
+                                            name="nombreImpuestoCrear" required minlength="3">
+                                        <div class="invalid-feedback">Por favor, ingrese un nombre (mínimo 3
+                                            caracteres).</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="tasaImpuestoCrear" class="form-label">Tasa del impuesto (%)</label>
+                                    <input type="number" class="form-control" id="tasaImpuestoCrear"
+                                        name="tasaImpuestoCrear" required min="0" max="100" step="0.01">
+                                    <div class="invalid-feedback">Por favor, ingrese una tasa válida (entre 0 y 100).
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="descripcionImpuestoCrear" class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="descripcionImpuestoCrear"
+                                        name="descripcionImpuestoCrear" rows="3"></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="categoriaAplicableCrear" class="form-label">Categoría Aplicable</label>
+                                    <select class="form-select" id="categoriaAplicableCrear"
+                                        name="categoriaAplicableCrear" required>
+                                        <option value="">Seleccione una categoría...</option>
+                                        <!-- Aquí se cargarían dinámicamente las categorías existentes -->
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, seleccione una categoría aplicable.</div>
+                                </div>
+
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-success">Crear Impuesto</button>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="tasaImpuesto" class="form-label">Tasa del impuesto (%)</label>
-                            <input type="number" class="form-control" id="tasaImpuesto" name="tasaImpuesto" required
-                                min="0" max="100" step="0.01">
-                            <div class="invalid-feedback">Por favor, ingrese una tasa válida (entre 0 y 100).</div>
+                        <!-- Tab Editar Impuesto -->
+                        <div class="tab-pane fade" id="editar-impuesto" role="tabpanel"
+                            aria-labelledby="editar-impuesto-tab">
+                            <form id="formularioEditarImpuesto" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="seleccionarImpuestoEditar" class="form-label">Seleccionar
+                                        Impuesto</label>
+                                    <select class="form-select" id="seleccionarImpuestoEditar"
+                                        name="seleccionarImpuestoEditar" required>
+                                        <option value="">Seleccione un impuesto</option>
+                                        <!-- Aquí se cargarían dinámicamente los impuestos existentes -->
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, seleccione un impuesto para editar.</div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="codigoImpuestoEditar" class="form-label">Código de impuesto</label>
+                                        <input type="text" class="form-control" id="codigoImpuestoEditar"
+                                            name="codigoImpuestoEditar" required pattern="[A-Za-z0-9]{3,}"
+                                            title="El código debe tener al menos 3 caracteres alfanuméricos">
+                                        <div class="invalid-feedback">Por favor, ingrese un código válido (mínimo 3
+                                            caracteres alfanuméricos).</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="nombreImpuestoEditar" class="form-label">Nombre del impuesto</label>
+                                        <input type="text" class="form-control" id="nombreImpuestoEditar"
+                                            name="nombreImpuestoEditar" required minlength="3">
+                                        <div class="invalid-feedback">Por favor, ingrese un nombre (mínimo 3
+                                            caracteres).</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="tasaImpuestoEditar" class="form-label">Tasa del impuesto (%)</label>
+                                    <input type="number" class="form-control" id="tasaImpuestoEditar"
+                                        name="tasaImpuestoEditar" required min="0" max="100" step="0.01">
+                                    <div class="invalid-feedback">Por favor, ingrese una tasa válida (entre 0 y 100).
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="descripcionImpuestoEditar" class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="descripcionImpuestoEditar"
+                                        name="descripcionImpuestoEditar" rows="3"></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="categoriaAplicableEditar" class="form-label">Categoría Aplicable</label>
+                                    <select class="form-select" id="categoriaAplicableEditar"
+                                        name="categoriaAplicableEditar" required>
+                                        <option value="">Seleccione una categoría...</option>
+                                        <!-- Aquí se cargarían dinámicamente las categorías existentes -->
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, seleccione una categoría aplicable.</div>
+                                </div>
+
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-warning">Actualizar Impuesto</button>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="descripcionImpuesto" class="form-label">Descripción</label>
-                            <textarea class="form-control" id="descripcionImpuesto" name="descripcionImpuesto"
-                                rows="3"></textarea>
+                        <!-- Tab Eliminar Impuesto -->
+                        <div class="tab-pane fade" id="eliminar-impuesto" role="tabpanel"
+                            aria-labelledby="eliminar-impuesto-tab">
+                            <form id="formularioEliminarImpuesto" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="seleccionarImpuestoEliminar" class="form-label">Seleccionar Impuesto a
+                                        Eliminar</label>
+                                    <select class="form-select" id="seleccionarImpuestoEliminar"
+                                        name="seleccionarImpuestoEliminar" required>
+                                        <option value="">Seleccione un impuesto</option>
+                                        <!-- Aquí se cargarían dinámicamente los impuestos existentes -->
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, seleccione un impuesto para eliminar.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="text-danger">¿Está seguro de que desea eliminar este impuesto? Esta acción
+                                        no se puede deshacer.</p>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-danger">Eliminar Impuesto</button>
+                                </div>
+                            </form>
                         </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="fechaInicioImpuesto" class="form-label">Fecha de inicio</label>
-                                <input type="date" class="form-control" id="fechaInicioImpuesto"
-                                    name="fechaInicioImpuesto" required>
-                                <div class="invalid-feedback">Por favor, seleccione una fecha de inicio válida.</div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="fechaFinImpuesto" class="form-label">Fecha de fin</label>
-                                <input type="date" class="form-control" id="fechaFinImpuesto" name="fechaFinImpuesto"
-                                    required>
-                                <div class="invalid-feedback">Por favor, seleccione una fecha de fin válida.</div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="aplicabilidadImpuesto" class="form-label">Aplicabilidad</label>
-                            <select class="form-select" id="aplicabilidadImpuesto" name="aplicabilidadImpuesto"
-                                required>
-                                <option value="">Seleccione...</option>
-                                <option value="productos">Productos</option>
-                                <option value="servicios">Servicios</option>
-                                <option value="ambos">Productos y Servicios</option>
-                            </select>
-                            <div class="invalid-feedback">Por favor, seleccione la aplicabilidad del impuesto.</div>
-                        </div>
-
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-secondary me-2"
-                                data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-success">Guardar</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal de Categorías y Códigos DIAN -->
+    <!-- Modal de Categorías-->
     <div class="modal fade" id="modalCategoria" tabindex="-1" aria-labelledby="etiquetaModalCategoria"
         aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-info text-white">
-                    <h5 class="modal-title" id="etiquetaModalCategoria"><i class="bi bi-tags me-2"></i>Asociar
+                    <h5 class="modal-title" id="etiquetaModalCategoria"><i class="bi bi-tags me-2"></i>Gestionar
                         Categorías y Códigos DIAN</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="formularioCategoria" class="needs-validation" novalidate>
-                        <div class="mb-3">
-                            <label for="categoriaProducto" class="form-label">Categoría producto/servicio</label>
-                            <input type="text" class="form-control" id="categoriaProducto" name="categoriaProducto"
-                                required minlength="3">
-                            <div class="invalid-feedback">Por favor, ingrese una categoría válida (mínimo 3 caracteres).
-                            </div>
+                    <!-- Tabs de navegación -->
+                    <ul class="nav nav-tabs" id="categoriaTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="crear-tab" data-bs-toggle="tab" data-bs-target="#crear"
+                                type="button" role="tab" aria-controls="crear" aria-selected="true">Crear
+                                Categoría</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="editar-tab" data-bs-toggle="tab" data-bs-target="#editar"
+                                type="button" role="tab" aria-controls="editar" aria-selected="false">Editar
+                                Categoría</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="eliminar-tab" data-bs-toggle="tab" data-bs-target="#eliminar"
+                                type="button" role="tab" aria-controls="eliminar" aria-selected="false">Eliminar
+                                Categoría</button>
+                        </li>
+                    </ul>
+
+                    <!-- Contenido de las tabs -->
+                    <div class="tab-content mt-3" id="categoriaTabsContent">
+                        <!-- Tab Crear Categoría -->
+                        <div class="tab-pane fade show active" id="crear" role="tabpanel" aria-labelledby="crear-tab">
+                            <form id="formularioCrearCategoria" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="categoriaProductoCrear" class="form-label">Categoría
+                                        producto/servicio</label>
+                                    <input type="text" class="form-control" id="categoriaProductoCrear"
+                                        name="categoriaProductoCrear" required minlength="3">
+                                    <div class="invalid-feedback">Por favor, ingrese una categoría válida (mínimo 3
+                                        caracteres).</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="codigoDIANCrear" class="form-label">Código DIAN</label>
+                                    <input type="text" class="form-control" id="codigoDIANCrear" name="codigoDIANCrear"
+                                        required pattern="[0-9]{4,}"
+                                        title="El código DIAN debe tener al menos 4 dígitos">
+                                    <div class="invalid-feedback">Por favor, ingrese un código DIAN válido (mínimo 4
+                                        dígitos).</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descripcionCategoriaCrear" class="form-label">Descripción de la
+                                        categoría</label>
+                                    <textarea class="form-control" id="descripcionCategoriaCrear"
+                                        name="descripcionCategoriaCrear" rows="3" required></textarea>
+                                    <div class="invalid-feedback">Por favor, ingrese una descripción para la categoría.
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-info">Crear Categoría</button>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="codigoDIAN" class="form-label">Código DIAN</label>
-                            <input type="text" class="form-control" id="codigoDIAN" name="codigoDIAN" required
-                                pattern="[0-9]{4,}" title="El código DIAN debe tener al menos 4 dígitos">
-                            <div class="invalid-feedback">Por favor, ingrese un código DIAN válido (mínimo 4 dígitos).
-                            </div>
+                        <!-- Tab Editar Categoría -->
+                        <div class="tab-pane fade" id="editar" role="tabpanel" aria-labelledby="editar-tab">
+                            <form id="formularioEditarCategoria" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="seleccionarCategoriaEditar" class="form-label">Seleccionar
+                                        Categoría</label>
+                                    <select class="form-select" id="seleccionarCategoriaEditar"
+                                        name="seleccionarCategoriaEditar" required>
+                                        <option value="">Seleccione una categoría</option>
+                                        <!-- Aquí se cargarían dinámicamente las categorías existentes -->
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, seleccione una categoría para editar.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="categoriaProductoEditar" class="form-label">Categoría
+                                        producto/servicio</label>
+                                    <input type="text" class="form-control" id="categoriaProductoEditar"
+                                        name="categoriaProductoEditar" required minlength="3">
+                                    <div class="invalid-feedback">Por favor, ingrese una categoría válida (mínimo 3
+                                        caracteres).</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="codigoDIANEditar" class="form-label">Código DIAN</label>
+                                    <input type="text" class="form-control" id="codigoDIANEditar"
+                                        name="codigoDIANEditar" required pattern="[0-9]{4,}"
+                                        title="El código DIAN debe tener al menos 4 dígitos">
+                                    <div class="invalid-feedback">Por favor, ingrese un código DIAN válido (mínimo 4
+                                        dígitos).</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descripcionCategoriaEditar" class="form-label">Descripción de la
+                                        categoría</label>
+                                    <textarea class="form-control" id="descripcionCategoriaEditar"
+                                        name="descripcionCategoriaEditar" rows="3" required></textarea>
+                                    <div class="invalid-feedback">Por favor, ingrese una descripción para la categoría.
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-warning">Actualizar Categoría</button>
+                                </div>
+                            </form>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="descripcionCategoria" class="form-label">Descripción de la categoría</label>
-                            <textarea class="form-control" id="descripcionCategoria" name="descripcionCategoria"
-                                rows="3" required></textarea>
-                            <div class="invalid-feedback">Por favor, ingrese una descripción para la categoría.</div>
+                        <!-- Tab Eliminar Categoría -->
+                        <div class="tab-pane fade" id="eliminar" role="tabpanel" aria-labelledby="eliminar-tab">
+                            <form id="formularioEliminarCategoria" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="seleccionarCategoriaEliminar" class="form-label">Seleccionar Categoría a
+                                        Eliminar</label>
+                                    <select class="form-select" id="seleccionarCategoriaEliminar"
+                                        name="seleccionarCategoriaEliminar" required>
+                                        <option value="">Seleccione una categoría</option>
+                                        <!-- Aquí se cargarían dinámicamente las categorías existentes -->
+                                    </select>
+                                    <div class="invalid-feedback">Por favor, seleccione una categoría para eliminar.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="text-danger">¿Está seguro de que desea eliminar esta categoría? Esta
+                                        acción no se puede deshacer.</p>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-danger">Eliminar Categoría</button>
+                                </div>
+                            </form>
                         </div>
-
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-secondary me-2"
-                                data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-info">Asociar</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1017,35 +1358,34 @@
                         </ul>
 
                         <div class="tab-content" id="itemTypeTabContent">
-
-                            <!-- tab prodcuto -->
+                            <!-- tab producto -->
                             <div class="tab-pane fade show active " id="producto" role="tabpanel"
                                 aria-labelledby="producto-tab">
                                 <form id="formProductos" class="needs-validation" novalidate>
                                     <div class="row mb-3">
                                         <div class="col-md-6">
-                                            <label for="nombreProducto" class="form-label">Nombre del producto</label>
+                                            <label for="nombreProducto" class="form-label">Nombre del producto *</label>
                                             <input type="text" class="form-control" id="nombreProducto" required>
                                             <div class="invalid-feedback">
                                                 Por favor, ingrese el nombre del producto.
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="codigoUnico" class="form-label">Código único</label>
+                                            <label for="codigoUnico" class="form-label">Código único *</label>
                                             <input type="text" class="form-control" id="codigoUnico" required>
                                             <div class="invalid-feedback">
                                                 Por favor, ingrese el código único.
                                             </div>
                                         </div>
                                         <div class="col-md-6 mt-3">
-                                            <label for="codigoGtin" class="form-label">Código GTIN</label>
+                                            <label for="codigoGtin" class="form-label">Código GTIN *</label>
                                             <input type="text" class="form-control" id="codigoGtin" required>
                                             <div class="invalid-feedback">
-                                                Por favor, ingrese el código DIAN si lo sabes.
+                                                Por favor, ingrese el código GTIN.
                                             </div>
                                         </div>
                                         <div class="col-md-6 mt-3">
-                                            <label for="categoria" class="form-label">Categoría</label>
+                                            <label for="categoria" class="form-label">Categoría *</label>
                                             <select class="form-select" id="categoria" required>
                                                 <option value="">Seleccione una categoría</option>
                                                 <!-- Opciones de categoría se cargarán dinámicamente -->
@@ -1057,7 +1397,7 @@
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-3 mt-3">
-                                            <label for="precioBase" class="form-label">Precio base</label>
+                                            <label for="precioBase" class="form-label">Precio base *</label>
                                             <input type="number" class="form-control" id="precioBase" required min="0"
                                                 step="0.01">
                                             <div class="invalid-feedback">
@@ -1066,7 +1406,7 @@
                                         </div>
                                         <div class="col-3 mt-3">
                                             <label for="impuestosAplicables" class="form-label">Impuestos
-                                                aplicables</label>
+                                                aplicables *</label>
                                             <select class="form-select" id="impuestosAplicables" required>
                                                 <option value="0">0% - Exento</option>
                                                 <option value="5">5% - Reducido</option>
@@ -1077,20 +1417,20 @@
                                             </div>
                                         </div>
                                         <div class="col-3 mt-3">
-                                            <label for="precioVenta" class="form-label">Precio de venta</label>
+                                            <label for="precioVenta" class="form-label">Precio de venta *</label>
                                             <input type="number" class="form-control" id="precioVenta" required min="0"
                                                 step="0.01">
                                         </div>
                                         <div class="col-3 mt-3">
                                             <label for="unidadMedidaNuevo" class="form-label">Unidad de
-                                                Medida</label>
+                                                Medida *</label>
                                             <select class="form-select" id="unidadMedidaNuevo" required>
                                                 <!-- Las opciones se cargarán dinámicamente -->
                                             </select>
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="descripcion" class="form-label">Descripción</label>
+                                        <label for="descripcion" class="form-label">Descripción *</label>
                                         <textarea class="form-control" id="descripcion" rows="3" required></textarea>
                                         <div class="invalid-feedback">
                                             Por favor, ingrese una descripción.
@@ -1108,25 +1448,22 @@
                                         <div class="collapse collapse-horizontal"
                                             id="opcionesAvanzadasProductoCollapse">
                                             <div class="row">
-
                                                 <div class="col-6">
                                                     <label for="imagenProducto" class="form-label">Imagen del
                                                         producto</label>
                                                     <input type="file" class="form-control" id="imagenProducto"
                                                         accept="image/*">
                                                 </div>
-
                                                 <div class="col-md-6">
                                                     <label for="cantidadInicialProducto" class="form-label">Cantidad
                                                         Inicial</label>
                                                     <input type="number" class="form-control"
-                                                        id="cantidadInicialProducto" required min="0" step="0.01">
+                                                        id="cantidadInicialProducto" min="0" step="0.01">
                                                 </div>
-
                                                 <div class="col-md-12 mt-3">
                                                     <label for="codigoUNSPSC" class="form-label">Codigo UNSPSC</label>
-                                                    <input type="number" class="form-control" id="codigoUNSPSC" required
-                                                        min="0" step="0.01">
+                                                    <input type="number" class="form-control" id="codigoUNSPSC" min="0"
+                                                        step="0.01">
                                                 </div>
                                             </div>
                                         </div>
@@ -1136,7 +1473,6 @@
                                         <button type="button" class="btn btn-primary"
                                             onclick="validarYGuardarProductos()">Guardar cambios</button>
                                     </div>
-
                                 </form>
                             </div>
 
@@ -1145,28 +1481,28 @@
                                 <form action="" id="form-servicios">
                                     <div class="row mb-3">
                                         <div class="col-md-6">
-                                            <label for="nombreServicio" class="form-label">Nombre del servicio</label>
+                                            <label for="nombreServicio" class="form-label">Nombre del servicio *</label>
                                             <input type="text" class="form-control" id="nombreServicio" required>
                                             <div class="invalid-feedback">
                                                 Por favor, ingrese el nombre del servicio.
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="codigoUnicoServicio" class="form-label">Código único</label>
+                                            <label for="codigoUnicoServicio" class="form-label">Código único *</label>
                                             <input type="text" class="form-control" id="codigoUnicoServicio" required>
                                             <div class="invalid-feedback">
                                                 Por favor, ingrese el código único.
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="codigoUNSPSCServicio" class="form-label">Código UNSPSC</label>
+                                            <label for="codigoUNSPSCServicio" class="form-label">Código UNSPSC *</label>
                                             <input type="text" class="form-control" id="codigoUNSPSCServicio" required>
                                             <div class="invalid-feedback">
-                                                Por favor, ingrese el código DIAN si lo sabes.
+                                                Por favor, ingrese el código UNSPSC.
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="categoriaServicio" class="form-label">Categoría</label>
+                                            <label for="categoriaServicio" class="form-label">Categoría *</label>
                                             <select class="form-select" id="categoriaServicio" required>
                                                 <option value="">Seleccione una categoría</option>
                                                 <!-- Opciones de categoría se cargarán dinámicamente -->
@@ -1179,7 +1515,7 @@
 
                                     <div class="row mb-3">
                                         <div class="col-md-4">
-                                            <label for="precioBaseServicio" class="form-label">Precio base</label>
+                                            <label for="precioBaseServicio" class="form-label">Precio base *</label>
                                             <input type="number" class="form-control" id="precioBaseServicio" required
                                                 min="0" step="0.01">
                                             <div class="invalid-feedback">
@@ -1188,7 +1524,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <label for="impuestosAplicablesServicio" class="form-label">Impuestos
-                                                aplicables (DIAN)</label>
+                                                aplicables (DIAN) *</label>
                                             <select class="form-select" id="impuestosAplicablesServicio" required>
                                                 <option value="0">0% - Exento</option>
                                                 <option value="5">5% - Reducido</option>
@@ -1199,7 +1535,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="precioVentaServicio" class="form-label">Precio de venta</label>
+                                            <label for="precioVentaServicio" class="form-label">Precio de venta
+                                                *</label>
                                             <input type="number" class="form-control" id="precioVentaServicio" required
                                                 min="0" step="0.01">
                                             <div class="invalid-feedback">
@@ -1208,7 +1545,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="descripcionServicio" class="form-label">Descripción</label>
+                                        <label for="descripcionServicio" class="form-label">Descripción *</label>
                                         <textarea class="form-control" id="descripcionServicio" rows="3"
                                             required></textarea>
                                         <div class="invalid-feedback">
@@ -1224,26 +1561,23 @@
 
                                     <div class="collapse collapse-horizontal" id="opcionesAvanzadasServicioCollapse">
                                         <div class="row">
-
                                             <div class="col-6">
                                                 <label for="imagenServicio" class="form-label">Imagen de
                                                     servicio</label>
                                                 <input type="file" class="form-control" id="imagenServicio"
                                                     accept="image/*">
                                             </div>
-
                                             <div class="col-6">
                                                 <label for="unidadMedidaServicio" class="form-label">Unidad de
                                                     Medida</label>
-                                                <select class="form-select" id="unidadMedidaServicio" required>
+                                                <select class="form-select" id="unidadMedidaServicio">
                                                     <!-- Las opciones se cargarán dinámicamente -->
                                                 </select>
                                             </div>
-
                                             <div class="col-md-12">
                                                 <label for="codigoGtinServicios" class="form-label">Codigo GTIN</label>
                                                 <input type="number" class="form-control" id="codigoGtinServicios"
-                                                    required min="0" step="0.01">
+                                                    min="0" step="0.01">
                                             </div>
                                         </div>
                                     </div>
@@ -1259,14 +1593,14 @@
                                 <form action="" id="form-combos">
                                     <div class="row mb-3">
                                         <div class="col-md-6">
-                                            <label for="nombreCombo" class="form-label">Nombre del combo</label>
+                                            <label for="nombreCombo" class="form-label">Nombre del combo *</label>
                                             <input type="text" class="form-control" id="nombreCombo" required>
                                             <div class="invalid-feedback">
                                                 Por favor, ingrese el nombre del combo.
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="codigoUnicoCombo" class="form-label">Código único</label>
+                                            <label for="codigoUnicoCombo" class="form-label">Código único *</label>
                                             <input type="text" class="form-control" id="codigoUnicoCombo" required>
                                             <div class="invalid-feedback">
                                                 Por favor, ingrese el código único.
@@ -1275,7 +1609,7 @@
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-md-6">
-                                            <label for="precioBaseCombo" class="form-label">Precio base</label>
+                                            <label for="precioBaseCombo" class="form-label">Precio base *</label>
                                             <input type="number" class="form-control" id="precioBaseCombo" required
                                                 min="0" step="0.01">
                                             <div class="invalid-feedback">
@@ -1283,7 +1617,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="categoriaCombo" class="form-label">Categoría</label>
+                                            <label for="categoriaCombo" class="form-label">Categoría *</label>
                                             <select class="form-select" id="categoriaCombo" required>
                                                 <option value="">Seleccione una categoría</option>
                                                 <!-- Opciones de categoría se cargarán dinámicamente -->
@@ -1295,7 +1629,7 @@
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-md-6">
-                                            <label for="precioVentaCombo" class="form-label">Precio de venta</label>
+                                            <label for="precioVentaCombo" class="form-label">Precio de venta *</label>
                                             <input type="number" class="form-control" id="precioVentaCombo" required
                                                 min="0" step="0.01">
                                             <div class="invalid-feedback">
@@ -1304,7 +1638,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <label for="impuestosAplicablesCombo" class="form-label">Impuestos
-                                                aplicables (DIAN)</label>
+                                                aplicables (DIAN) *</label>
                                             <select class="form-select" id="impuestosAplicablesCombo" required>
                                                 <option value="0">0% - Exento</option>
                                                 <option value="5">5% - Reducido</option>
@@ -1318,14 +1652,14 @@
 
                                     <div class="mb-3">
                                         <label for="itemsCombo" class="form-label">Agregar productos o servicios al
-                                            combo</label>
+                                            combo *</label>
                                         <div class="input-group mb-3">
-                                            <select class="form-select" id="itemCombo">
+                                            <select class="form-select" id="itemCombo" required>
                                                 <option value="">Seleccione un producto o servicio</option>
                                                 <!-- Opciones se cargarán dinámicamente -->
                                             </select>
                                             <input type="number" class="form-control" id="cantidadItemCombo"
-                                                placeholder="Cantidad" min="1" value="1">
+                                                placeholder="Cantidad" min="1" value="1" required>
                                             <button class="btn btn-outline-secondary" type="button"
                                                 onclick="agregarItemAlCombo()">Agregar</button>
                                         </div>
@@ -1338,7 +1672,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="descripcionCombo" class="form-label">Descripción</label>
+                                        <label for="descripcionCombo" class="form-label">Descripción *</label>
                                         <textarea class="form-control" id="descripcionCombo" rows="3"
                                             required></textarea>
                                         <div class="invalid-feedback">
@@ -1365,10 +1699,8 @@
                                             onclick="validarYGuardarCombo()">Guardar
                                             cambios</button>
                                     </div>
-
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
