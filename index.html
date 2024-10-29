@@ -973,6 +973,10 @@
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title" id="editarProductoModalLabel">Editar Producto</h5>
+                    <button type="button" class="btn btn-outline-light change-log-btn" data-bs-toggle="modal"
+                        data-bs-target="#changeLogProductoModal">
+                        <i class="bi bi-clock-history"></i>
+                    </button>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
@@ -980,24 +984,26 @@
                     <form id="formEditProducto" class="needs-validation" novalidate>
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label for="editNombreProducto" class="form-label">Nombre del producto</label>
-                                <input type="text" class="form-control" id="editNombreProducto" required>
+                                <label for="editNombreProducto" class="form-label">Nombre del producto *</label>
+                                <input type="text" class="form-control bg-light" id="editNombreProducto" required
+                                    readonly>
                                 <div class="invalid-feedback">Por favor, ingrese el nombre del producto.</div>
                             </div>
                             <div class="col-md-6">
-                                <label for="editCodigoUnicoProducto" class="form-label">Código único</label>
-                                <input type="text" class="form-control" id="editCodigoUnicoProducto" required>
+                                <label for="editCodigoUnicoProducto" class="form-label">Código único *</label>
+                                <input type="text" class="form-control bg-light" id="editCodigoUnicoProducto" required
+                                    readonly>
                                 <div class="invalid-feedback">Por favor, ingrese el código único.</div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label for="editCodigoGtin" class="form-label">Código GTIN</label>
-                                <input type="text" class="form-control" id="editCodigoGtin" required>
+                                <label for="editCodigoGtin" class="form-label">Código GTIN *</label>
+                                <input type="text" class="form-control bg-light" id="editCodigoGtin" required readonly>
                                 <div class="invalid-feedback">Por favor, ingrese el código GTIN.</div>
                             </div>
                             <div class="col-md-6">
-                                <label for="editCategoriaProducto" class="form-label">Categoría</label>
+                                <label for="editCategoriaProducto" class="form-label">Categoría *</label>
                                 <select class="form-select" id="editCategoriaProducto" required>
                                     <option value="">Seleccione una categoría</option>
                                 </select>
@@ -1006,13 +1012,13 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-3">
-                                <label for="editPrecioBase" class="form-label">Precio base</label>
+                                <label for="editPrecioBase" class="form-label">Precio base *</label>
                                 <input type="number" class="form-control" id="editPrecioBase" required min="0"
                                     step="0.01">
                                 <div class="invalid-feedback">Por favor, ingrese un precio base válido.</div>
                             </div>
                             <div class="col-3">
-                                <label for="editImpuestos" class="form-label">Impuestos aplicables</label>
+                                <label for="editImpuestos" class="form-label">Impuestos aplicables *</label>
                                 <select class="form-select" id="editImpuestos" required>
                                     <option value="0">0% - Exento</option>
                                     <option value="5">5% - Reducido</option>
@@ -1021,19 +1027,19 @@
                                 <div class="invalid-feedback">Por favor, seleccione los impuestos aplicables.</div>
                             </div>
                             <div class="col-3">
-                                <label for="editPrecioVenta" class="form-label">Precio de venta</label>
+                                <label for="editPrecioVenta" class="form-label">Precio de venta *</label>
                                 <input type="number" class="form-control" id="editPrecioVenta" required min="0"
                                     step="0.01">
                             </div>
                             <div class="col-3">
-                                <label for="editUnidadMedida" class="form-label">Unidad de Medida</label>
+                                <label for="editUnidadMedida" class="form-label">Unidad de Medida *</label>
                                 <select class="form-select" id="editUnidadMedida" required>
                                     <!-- Opciones dinámicas -->
                                 </select>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="editDescripcionProducto" class="form-label">Descripción</label>
+                            <label for="editDescripcionProducto" class="form-label">Descripción *</label>
                             <textarea class="form-control" id="editDescripcionProducto" rows="3" required></textarea>
                             <div class="invalid-feedback">Por favor, ingrese una descripción.</div>
                         </div>
@@ -1051,12 +1057,11 @@
                                 <div class="col-md-6">
                                     <label for="editCantidadInicial" class="form-label">Cantidad Inicial</label>
                                     <input type="number" class="form-control" id="editCantidadInicial" min="0"
-                                        step="0.01" required>
+                                        step="0.01">
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <label for="editCodigoUNSPSC" class="form-label">Código UNSPSC</label>
-                                    <input type="number" class="form-control" id="editCodigoUNSPSC" min="0" step="0.01"
-                                        required>
+                                    <input type="number" class="form-control" id="editCodigoUNSPSC" min="0" step="0.01">
                                 </div>
                             </div>
                         </div>
@@ -1071,14 +1076,17 @@
         </div>
     </div>
 
-
     <!-- Modal para actualizar Servicio -->
     <div class="modal fade" id="editarServicioModal" tabindex="-1" aria-labelledby="editarServicioModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
+                <div class="modal-header bg-success text-white">
                     <h5 class="modal-title" id="editarServicioModalLabel">Editar Servicio</h5>
+                    <button type="button" class="btn btn-outline-light change-log-btn" data-bs-toggle="modal"
+                        data-bs-target="#changeLogServicioModal">
+                        <i class="bi bi-clock-history"></i>
+                    </button>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
@@ -1086,24 +1094,27 @@
                     <form id="formEditServicio" class="needs-validation" novalidate>
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label for="editNombreServicio" class="form-label">Nombre del servicio</label>
-                                <input type="text" class="form-control" id="editNombreServicio" required>
+                                <label for="editNombreServicio" class="form-label">Nombre del servicio *</label>
+                                <input type="text" class="form-control bg-light" id="editNombreServicio" required
+                                    readonly>
                                 <div class="invalid-feedback">Por favor, ingrese el nombre del servicio.</div>
                             </div>
                             <div class="col-md-6">
-                                <label for="editCodigoUnicoServicio" class="form-label">Código único</label>
-                                <input type="text" class="form-control" id="editCodigoUnicoServicio" required>
+                                <label for="editCodigoUnicoServicio" class="form-label">Código único *</label>
+                                <input type="text" class="form-control bg-light" id="editCodigoUnicoServicio" required
+                                    readonly>
                                 <div class="invalid-feedback">Por favor, ingrese el código único.</div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label for="editCodigoUNSPSCServicio" class="form-label">Código UNSPSC</label>
-                                <input type="text" class="form-control" id="editCodigoUNSPSCServicio" required>
+                                <label for="editCodigoUNSPSCServicio" class="form-label">Código UNSPSC *</label>
+                                <input type="text" class="form-control bg-light" id="editCodigoUNSPSCServicio" required
+                                    readonly>
                                 <div class="invalid-feedback">Por favor, ingrese el código UNSPSC.</div>
                             </div>
                             <div class="col-md-6">
-                                <label for="editCategoriaServicio" class="form-label">Categoría</label>
+                                <label for="editCategoriaServicio" class="form-label">Categoría *</label>
                                 <select class="form-select" id="editCategoriaServicio" required>
                                     <option value="">Seleccione una categoría</option>
                                 </select>
@@ -1112,14 +1123,14 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4">
-                                <label for="editPrecioBaseServicio" class="form-label">Precio base</label>
+                                <label for="editPrecioBaseServicio" class="form-label">Precio base *</label>
                                 <input type="number" class="form-control" id="editPrecioBaseServicio" required min="0"
                                     step="0.01">
                                 <div class="invalid-feedback">Por favor, ingrese un precio base válido.</div>
                             </div>
                             <div class="col-md-4">
                                 <label for="editImpuestosAplicablesServicio" class="form-label">Impuestos aplicables
-                                    (DIAN)</label>
+                                    (DIAN) *</label>
                                 <select class="form-select" id="editImpuestosAplicablesServicio" required>
                                     <option value="0">0% - Exento</option>
                                     <option value="5">5% - Reducido</option>
@@ -1128,14 +1139,14 @@
                                 <div class="invalid-feedback">Por favor, seleccione los impuestos aplicables.</div>
                             </div>
                             <div class="col-md-4">
-                                <label for="editPrecioVentaServicio" class="form-label">Precio de venta</label>
+                                <label for="editPrecioVentaServicio" class="form-label">Precio de venta *</label>
                                 <input type="number" class="form-control" id="editPrecioVentaServicio" required min="0"
                                     step="0.01">
                                 <div class="invalid-feedback">Por favor, ingrese un precio de venta válido.</div>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="editDescripcionServicio" class="form-label">Descripción</label>
+                            <label for="editDescripcionServicio" class="form-label">Descripción *</label>
                             <textarea class="form-control" id="editDescripcionServicio" rows="3" required></textarea>
                             <div class="invalid-feedback">Por favor, ingrese una descripción.</div>
                         </div>
@@ -1152,14 +1163,14 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="editUnidadMedidaServicio" class="form-label">Unidad de Medida</label>
-                                    <select class="form-select" id="editUnidadMedidaServicio" required>
+                                    <select class="form-select" id="editUnidadMedidaServicio">
                                         <!-- Opciones dinámicas -->
                                     </select>
                                 </div>
                                 <div class="col-md-12 mt-3">
                                     <label for="editCodigoGtinServicios" class="form-label">Código GTIN</label>
-                                    <input type="number" class="form-control" id="editCodigoGtinServicios" required
-                                        min="0" step="0.01">
+                                    <input type="number" class="form-control" id="editCodigoGtinServicios" min="0"
+                                        step="0.01">
                                 </div>
                             </div>
                         </div>
@@ -1167,556 +1178,785 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" onclick="guardarCambiosServicio()">Guardar
+                    <button type="button" class="btn btn-success" onclick="guardarCambiosServicio()">Guardar
                         Cambios</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <<!-- Modal para Editar Combo -->
-        <div class="modal fade" id="editarComboModal" tabindex="-1" aria-labelledby="editarComboModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title" id="editarComboModalLabel">Editar Combo</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="formEditCombo" class="needs-validation" novalidate>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="editNombreCombo" class="form-label">Nombre del combo</label>
-                                    <input type="text" class="form-control" id="editNombreCombo" required>
-                                    <div class="invalid-feedback">Por favor, ingrese el nombre del combo.</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="editCodigoUnicoCombo" class="form-label">Código único</label>
-                                    <input type="text" class="form-control" id="editCodigoUnicoCombo" required>
-                                    <div class="invalid-feedback">Por favor, ingrese el código único.</div>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="editPrecioBaseCombo" class="form-label">Precio base</label>
-                                    <input type="number" class="form-control" id="editPrecioBaseCombo" required min="0"
-                                        step="0.01">
-                                    <div class="invalid-feedback">Por favor, ingrese un precio base válido.</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="editCategoriaCombo" class="form-label">Categoría</label>
-                                    <select class="form-select" id="editCategoriaCombo" required>
-                                        <option value="">Seleccione una categoría</option>
-                                        <!-- Opciones dinámicas -->
-                                    </select>
-                                    <div class="invalid-feedback">Por favor, seleccione una categoría.</div>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="editPrecioVentaCombo" class="form-label">Precio de venta</label>
-                                    <input type="number" class="form-control" id="editPrecioVentaCombo" required min="0"
-                                        step="0.01">
-                                    <div class="invalid-feedback">Por favor, ingrese un precio de venta válido.</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="editImpuestosAplicablesCombo" class="form-label">Impuestos aplicables
-                                        (DIAN)</label>
-                                    <select class="form-select" id="editImpuestosAplicablesCombo" required>
-                                        <option value="0">0% - Exento</option>
-                                        <option value="5">5% - Reducido</option>
-                                        <option value="19">19% - General</option>
-                                    </select>
-                                    <div class="invalid-feedback">Por favor, seleccione los impuestos aplicables.</div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="editItemsCombo" class="form-label">Agregar productos o servicios al
-                                    combo</label>
-                                <div class="input-group mb-3">
-                                    <select class="form-select" id="editItemCombo">
-                                        <option value="">Seleccione un producto o servicio</option>
-                                        <!-- Opciones dinámicas -->
-                                    </select>
-                                    <input type="number" class="form-control" id="editCantidadItemCombo"
-                                        placeholder="Cantidad" min="1" value="1">
-                                    <button class="btn btn-outline-secondary" type="button"
-                                        onclick="agregarItemAlCombo()">Agregar</button>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <h6>Productos y servicios en el combo:</h6>
-                                <ul id="editListaItemsCombo" class="list-group">
-                                    <!-- Los ítems se agregarán dinámicamente -->
-                                </ul>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="editDescripcionCombo" class="form-label">Descripción</label>
-                                <textarea class="form-control" id="editDescripcionCombo" rows="3" required></textarea>
-                                <div class="invalid-feedback">Por favor, ingrese una descripción.</div>
-                            </div>
-
-                            <button class="btn btn-outline-secondary mb-3" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#editOpcionesAvanzadasCombo" aria-expanded="false"
-                                aria-controls="editOpcionesAvanzadasCombo">
-                                Opciones avanzadas
-                            </button>
-
-                            <div class="collapse" id="editOpcionesAvanzadasCombo">
-                                <div class="mb-3">
-                                    <label for="editImagenCombo" class="form-label">Imagen del combo</label>
-                                    <input type="file" class="form-control" id="editImagenCombo" accept="image/*">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" onclick="guardarCambiosCombo()">Guardar
-                            Cambios</button>
-                    </div>
+    <!-- Modal para Editar Combo -->
+    <div class="modal fade" id="editarComboModal" tabindex="-1" aria-labelledby="editarComboModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title" id="editarComboModalLabel">Editar Combo</h5>
+                    <button type="button" class="btn btn-outline-dark change-log-btn" data-bs-toggle="modal"
+                        data-bs-target="#changeLogComboModal">
+                        <i class="bi bi-clock-history"></i>
+                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
-        </div>
-
-        <!-- Modal para eliminar ítem -->
-        <div class="modal fade" id="eliminarItemModal" tabindex="-1" aria-labelledby="eliminarItemModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-danger text-white">
-                        <h5 class="modal-title" id="eliminarItemModalLabel">
-                            <i class="bi bi-exclamation-triangle-fill me-2"></i>Confirmar Eliminación
-                        </h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="alert alert-warning" role="alert">
-                            <i class="bi bi-question-circle-fill me-2"></i>
-                            <strong>¿Está seguro de que desea eliminar el siguiente ítem?</strong>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h6 class="card-subtitle mb-2 text-muted">Detalles del ítem a eliminar:</h6>
-                                <p id="eliminarItemInfo" class="card-text"></p>
+                <div class="modal-body">
+                    <form id="formEditCombo" class="needs-validation" novalidate>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editNombreCombo" class="form-label">Nombre del combo *</label>
+                                <input type="text" class="form-control bg-light" id="editNombreCombo" required readonly>
+                                <div class="invalid-feedback">Por favor, ingrese el nombre del combo.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editCodigoUnicoCombo" class="form-label">Código único *</label>
+                                <input type="text" class="form-control bg-light" id="editCodigoUnicoCombo" required
+                                    readonly>
+                                <div class="invalid-feedback">Por favor, ingrese el código único.</div>
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editPrecioBaseCombo" class="form-label">Precio base *</label>
+                                <input type="number" class="form-control" id="editPrecioBaseCombo" required min="0"
+                                    step="0.01">
+                                <div class="invalid-feedback">Por favor, ingrese un precio base válido.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editCategoriaCombo" class="form-label">Categoría *</label>
+                                <select class="form-select" id="editCategoriaCombo" required>
+                                    <option value="">Seleccione una categoría</option>
+                                    <!-- Opciones dinámicas -->
+                                </select>
+                                <div class="invalid-feedback">Por favor, seleccione una categoría.</div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editPrecioVentaCombo" class="form-label">Precio de venta *</label>
+                                <input type="number" class="form-control" id="editPrecioVentaCombo" required min="0"
+                                    step="0.01">
+                                <div class="invalid-feedback">Por favor, ingrese un precio de venta válido.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editImpuestosAplicablesCombo" class="form-label">Impuestos aplicables
+                                    (DIAN) *</label>
+                                <select class="form-select" id="editImpuestosAplicablesCombo" required>
+                                    <option value="0">0% - Exento</option>
+                                    <option value="5">5% - Reducido</option>
+                                    <option value="19">19% - General</option>
+                                </select>
+                                <div class="invalid-feedback">Por favor, seleccione los impuestos aplicables.</div>
+                            </div>
+                        </div>
+
                         <div class="mb-3">
-                            <label for="razonEliminacion" class="form-label">
-                                <i class="bi bi-pencil-fill me-2"></i>Razón de eliminación:
-                            </label>
-                            <textarea class="form-control" id="razonEliminacion" rows="3" required
-                                placeholder="Por favor, explique brevemente por qué desea eliminar este ítem..."></textarea>
-                            <div class="invalid-feedback">
-                                Por favor, ingrese una razón para la eliminación.
+                            <label for="editItemsCombo" class="form-label">Agregar productos o servicios al
+                                combo *</label>
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="editItemCombo">
+                                    <option value="">Seleccione un producto o servicio</option>
+                                    <!-- Opciones dinámicas -->
+                                </select>
+                                <input type="number" class="form-control" id="editCantidadItemCombo"
+                                    placeholder="Cantidad" min="1" value="1">
+                                <button class="btn btn-outline-secondary" type="button"
+                                    onclick="agregarItemAlCombo()">Agregar</button>
                             </div>
                         </div>
+
+                        <div class="mb-3">
+                            <h6>Productos y servicios en el combo:</h6>
+                            <ul id="editListaItemsCombo" class="list-group">
+                                <!-- Los ítems se agregarán dinámicamente -->
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="editDescripcionCombo" class="form-label">Descripción *</label>
+                            <textarea class="form-control" id="editDescripcionCombo" rows="3" required></textarea>
+                            <div class="invalid-feedback">Por favor, ingrese una descripción.</div>
+                        </div>
+
+                        <button class="btn btn-outline-secondary mb-3" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#editOpcionesAvanzadasCombo" aria-expanded="false"
+                            aria-controls="editOpcionesAvanzadasCombo">
+                            Opciones avanzadas
+                        </button>
+
+                        <div class="collapse" id="editOpcionesAvanzadasCombo">
+                            <div class="mb-3">
+                                <label for="editImagenCombo" class="form-label">Imagen del combo</label>
+                                <input type="file" class="form-control" id="editImagenCombo" accept="image/*">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" onclick="guardarCambiosCombo()">Guardar
+                        Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Registro de Cambios de Producto -->
+    <div class="modal fade modal-producto" id="changeLogProductoModal" tabindex="-1"
+        aria-labelledby="changeLogProductoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="changeLogProductoModalLabel">Registro de Cambios - Producto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="change-log-item">
+                        <div class="change-log-date">
+                            <i class="bi bi-calendar-event"></i> 15 de mayo, 2023 - 14:30
+                        </div>
+                        <div>
+                            <span class="change-type change-type-update">Actualización</span>
+                            <span class="fw-bold">Cambio de precio y descripción</span>
+                        </div>
+                        <div class="change-details">
+                            <div><span class="change-field">Precio Base:</span>
+                                <span class="change-old-value">$90.00</span> →
+                                <span class="change-new-value">$100.00</span>
+                            </div>
+                            <div><span class="change-field">Descripción:</span>
+                                <span class="change-old-value">Descripción anterior del producto</span> →
+                                <span class="change-new-value">Nueva descripción actualizada del producto</span>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">Realizado por: Juan Pérez</small>
+                        </div>
                     </div>
-                    <div class="modal-footer bg-light">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            <i class="bi bi-x-circle me-2"></i>Cancelar
-                        </button>
-                        <button type="button" class="btn btn-danger" onclick="confirmarEliminacion()">
-                            <i class="bi bi-trash-fill me-2"></i>Eliminar
-                        </button>
+                    <div class="change-log-item">
+                        <div class="change-log-date">
+                            <i class="bi bi-calendar-event"></i> 20 de abril, 2023 - 10:00
+                        </div>
+                        <div>
+                            <span class="change-type change-type-add">Creación</span>
+                            <span class="fw-bold">Creación inicial del producto</span>
+                        </div>
+                        <div class="change-details">
+                            <div><span class="change-field">Nombre:</span> <span class="change-new-value">Producto
+                                    A</span></div>
+                            <div><span class="change-field">Código:</span> <span class="change-new-value">PRD001</span>
+                            </div>
+                            <div><span class="change-field">Precio Base:</span> <span
+                                    class="change-new-value">$90.00</span></div>
+                            <div><span class="change-field">Categoría:</span> <span
+                                    class="change-new-value">Electrónicos</span></div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">Realizado por: María Rodríguez</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Modal para agregar nuevo ítem -->
-        <div class="modal fade" id="agregarItemModal" tabindex="-1" aria-labelledby="agregarItemModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable modal-lg p-3">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="agregarItemModalLabel">Ingreso de Productos y Servicios</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Modal para Registro de Cambios de Servicio -->
+    <div class="modal fade modal-servicio" id="changeLogServicioModal" tabindex="-1"
+        aria-labelledby="changeLogServicioModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="changeLogServicioModalLabel">Registro de Cambios - Servicio</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="change-log-item">
+                        <div class="change-log-date">
+                            <i class="bi bi-calendar-event"></i> 10 de mayo, 2023 - 11:15
+                        </div>
+                        <div>
+                            <span class="change-type change-type-update">Actualización</span>
+                            <span class="fw-bold">Cambio de precio y categoría</span>
+                        </div>
+                        <div class="change-details">
+                            <div><span class="change-field">Precio Base:</span>
+                                <span class="change-old-value">$150.00</span> →
+                                <span class="change-new-value">$180.00</span>
+                            </div>
+                            <div><span class="change-field">Categoría:</span>
+                                <span class="change-old-value">Mantenimiento</span> →
+                                <span class="change-new-value">Reparación</span>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">Realizado por: Carlos Gómez</small>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <ul class="nav nav-tabs mb-3" id="itemTypeTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="producto-tab" data-bs-toggle="tab"
-                                    data-bs-target="#producto" type="button" role="tab" aria-controls="producto"
-                                    aria-selected="true">Producto</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="servicio-tab" data-bs-toggle="tab"
-                                    data-bs-target="#servicio" type="button" role="tab" aria-controls="servicio"
-                                    aria-selected="false">Servicio</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="combo-tab" data-bs-toggle="tab" data-bs-target="#combo"
-                                    type="button" role="tab" aria-controls="combo" aria-selected="false">Combo</button>
-                            </li>
-                        </ul>
+                    <div class="change-log-item">
+                        <div class="change-log-date">
+                            <i class="bi bi-calendar-event"></i> 15 de marzo, 2023 - 09:30
+                        </div>
+                        <div>
+                            <span class="change-type change-type-update">Actualización</span>
+                            <span class="fw-bold">Actualización de la descripción</span>
+                        </div>
+                        <div class="change-details">
+                            <div><span class="change-field">Descripción:</span>
+                                <span class="change-old-value">Servicio básico de mantenimiento</span> →
+                                <span class="change-new-value">Servicio completo de mantenimiento y revisión</span>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">Realizado por: Ana Martínez</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                        <div class="tab-content" id="itemTypeTabContent">
-                            <!-- tab producto -->
-                            <div class="tab-pane fade show active " id="producto" role="tabpanel"
-                                aria-labelledby="producto-tab">
-                                <form id="formProductos" class="needs-validation" novalidate>
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label for="nombreProducto" class="form-label">Nombre del producto *</label>
-                                            <input type="text" class="form-control" id="nombreProducto" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese el nombre del producto.
-                                            </div>
+    <!-- Modal para Registro de Cambios de Combo -->
+    <div class="modal fade modal-combo" id="changeLogComboModal" tabindex="-1"
+        aria-labelledby="changeLogComboModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title" id="changeLogComboModalLabel">Registro de Cambios - Combo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="change-log-item">
+                        <div class="change-log-date">
+                            <i class="bi bi-calendar-event"></i> 20 de mayo, 2023 - 16:45
+                        </div>
+                        <div>
+                            <span class="change-type change-type-update">Actualización</span>
+                            <span class="fw-bold">Cambio en productos incluidos y precio</span>
+                        </div>
+                        <div class="change-details">
+                            <div><span class="change-field">Productos incluidos:</span>
+                                <span class="change-old-value">Producto A (x1), Servicio X (x1)</span> →
+                                <span class="change-new-value">Producto A (x2), Servicio X (x1)</span>
+                            </div>
+                            <div><span class="change-field">Precio Total:</span>
+                                <span class="change-old-value">$250.00</span> →
+                                <span class="change-new-value">$300.00</span>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">Realizado por: Laura Sánchez</small>
+                        </div>
+                    </div>
+                    <div class="change-log-item">
+                        <div class="change-log-date">
+                            <i class="bi bi-calendar-event"></i> 5 de abril, 2023 - 13:20
+                        </div>
+                        <div>
+                            <span class="change-type change-type-update">Actualización</span>
+                            <span class="fw-bold">Cambio de descripción y categoría</span>
+                        </div>
+                        <div class="change-details">
+                            <div><span class="change-field">Descripción:</span>
+                                <span class="change-old-value">Combo básico de productos</span> →
+                                <span class="change-new-value">Combo premium con productos y servicios selectos</span>
+                            </div>
+                            <div><span class="change-field">Categoría:</span>
+                                <span class="change-old-value">Combos Estándar</span> →
+                                <span class="change-new-value">Combos Premium</span>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">Realizado por: Pedro Ramírez</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para eliminar ítem -->
+    <div class="modal fade" id="eliminarItemModal" tabindex="-1" aria-labelledby="eliminarItemModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="eliminarItemModalLabel">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>Confirmar Eliminación
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning" role="alert">
+                        <i class="bi bi-question-circle-fill me-2"></i>
+                        <strong>¿Está seguro de que desea eliminar el siguiente ítem?</strong>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">Detalles del ítem a eliminar:</h6>
+                            <p id="eliminarItemInfo" class="card-text"></p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="razonEliminacion" class="form-label">
+                            <i class="bi bi-pencil-fill me-2"></i>Razón de eliminación:
+                        </label>
+                        <textarea class="form-control" id="razonEliminacion" rows="3" required
+                            placeholder="Por favor, explique brevemente por qué desea eliminar este ítem..."></textarea>
+                        <div class="invalid-feedback">
+                            Por favor, ingrese una razón para la eliminación.
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Cancelar
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="confirmarEliminacion()">
+                        <i class="bi bi-trash-fill me-2"></i>Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar nuevo ítem -->
+    <div class="modal fade" id="agregarItemModal" tabindex="-1" aria-labelledby="agregarItemModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable modal-lg p-3">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregarItemModalLabel">Ingreso de Productos y Servicios</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs mb-3" id="itemTypeTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="producto-tab" data-bs-toggle="tab"
+                                data-bs-target="#producto" type="button" role="tab" aria-controls="producto"
+                                aria-selected="true">Producto</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="servicio-tab" data-bs-toggle="tab" data-bs-target="#servicio"
+                                type="button" role="tab" aria-controls="servicio"
+                                aria-selected="false">Servicio</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="combo-tab" data-bs-toggle="tab" data-bs-target="#combo"
+                                type="button" role="tab" aria-controls="combo" aria-selected="false">Combo</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="itemTypeTabContent">
+                        <!-- tab producto -->
+                        <div class="tab-pane fade show active " id="producto" role="tabpanel"
+                            aria-labelledby="producto-tab">
+                            <form id="formProductos" class="needs-validation" novalidate>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="nombreProducto" class="form-label">Nombre del producto *</label>
+                                        <input type="text" class="form-control" id="nombreProducto" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el nombre del producto.
                                         </div>
-                                        <div class="col-md-6">
-                                            <label for="codigoUnico" class="form-label">Código único *</label>
-                                            <input type="text" class="form-control" id="codigoUnico" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese el código único.
-                                            </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="codigoUnico" class="form-label">Código único *</label>
+                                        <input type="text" class="form-control" id="codigoUnico" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el código único.
                                         </div>
-                                        <div class="col-md-6 mt-3">
-                                            <label for="codigoGtin" class="form-label">Código GTIN *</label>
-                                            <input type="text" class="form-control" id="codigoGtin" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese el código GTIN.
-                                            </div>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="codigoGtin" class="form-label">Código GTIN *</label>
+                                        <input type="text" class="form-control" id="codigoGtin" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el código GTIN.
                                         </div>
-                                        <div class="col-md-6 mt-3">
-                                            <label for="categoria" class="form-label">Categoría *</label>
-                                            <select class="form-select" id="categoria" required>
-                                                <option value="">Seleccione una categoría</option>
-                                                <!-- Opciones de categoría se cargarán dinámicamente -->
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Por favor, seleccione una categoría.
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="unidadMedidaNuevo" class="form-label">Unidad de Medida *</label>
+                                        <select class="form-select" id="unidadMedidaNuevo" required>
+                                            <option value="">Seleccione unidad</option>
+                                            <!-- Las opciones se cargarán dinámicamente -->
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="categoria" class="form-label">Categoría *</label>
+                                        <select class="form-select" id="categoria" required>
+                                            <option value="">Seleccione una categoría</option>
+                                            <!-- Las opciones se cargarán dinámicamente -->
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor, seleccione una categoría.
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mt-3">
+                                        <label for="categoriasSeleccionadas" class="form-label">Categorias
+                                            Seleccionadas</label>
+                                        <table id="categoriasSeleccionadas" class="table table-sm table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Categoría</th>
+                                                    <th>Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Las categorías seleccionadas se mostrarán aquí -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-4 mt-3">
+                                        <label for="precioBase" class="form-label">Precio base *</label>
+                                        <input type="number" class="form-control" id="precioBase" required min="0"
+                                            step="0.01">
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese un precio base válido.
+                                        </div>
+                                    </div>
+                                    <div class="col-4 mt-3">
+                                        <label for="impuestosAplicables" class="form-label">Impuestos
+                                            aplicables *</label>
+                                        <select class="form-select" id="impuestosAplicables" required>
+                                            <option value="0">0% - Exento</option>
+                                            <option value="5">5% - Reducido</option>
+                                            <option value="19">19% - General</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor, seleccione los impuestos aplicables.
+                                        </div>
+                                    </div>
+                                    <div class="col-4 mt-3">
+                                        <label for="precioVenta" class="form-label">Precio de venta *</label>
+                                        <input type="number" class="form-control" id="precioVenta" required min="0"
+                                            step="0.01">
+                                    </div>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descripcion" class="form-label">Descripción *</label>
+                                    <textarea class="form-control" id="descripcion" rows="3" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Por favor, ingrese una descripción.
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-outline-secondary" id="opcionesAvanzadasProducto" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#opcionesAvanzadasProductoCollapse"
+                                    aria-expanded="false" aria-controls="opcionesAvanzadasProductoCollapse">
+                                    Opciones avanzadas
+                                </button>
+
+                                <div>
+                                    <div class="collapse collapse-horizontal" id="opcionesAvanzadasProductoCollapse">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="imagenProducto" class="form-label">Imagen del
+                                                    producto</label>
+                                                <input type="file" class="form-control" id="imagenProducto"
+                                                    accept="image/*">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="cantidadInicialProducto" class="form-label">Cantidad
+                                                    Inicial</label>
+                                                <input type="number" class="form-control" id="cantidadInicialProducto"
+                                                    min="0" step="0.01">
+                                            </div>
+                                            <div class="col-md-12 mt-3">
+                                                <label for="codigoUNSPSC" class="form-label">Codigo UNSPSC</label>
+                                                <input type="number" class="form-control" id="codigoUNSPSC" min="0"
+                                                    step="0.01">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <div class="col-3 mt-3">
-                                            <label for="precioBase" class="form-label">Precio base *</label>
-                                            <input type="number" class="form-control" id="precioBase" required min="0"
-                                                step="0.01">
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese un precio base válido.
-                                            </div>
+                                </div>
+
+                                <div class="container-fluid text-center mt-3">
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="validarYGuardarProductos()">Guardar cambios</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- tab Servicio -->
+                        <div class="tab-pane fade" id="servicio" role="tabpanel" aria-labelledby="servicio-tab">
+                            <form action="" id="form-servicios">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="nombreServicio" class="form-label">Nombre del servicio *</label>
+                                        <input type="text" class="form-control" id="nombreServicio" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el nombre del servicio.
                                         </div>
-                                        <div class="col-3 mt-3">
-                                            <label for="impuestosAplicables" class="form-label">Impuestos
-                                                aplicables *</label>
-                                            <select class="form-select" id="impuestosAplicables" required>
-                                                <option value="0">0% - Exento</option>
-                                                <option value="5">5% - Reducido</option>
-                                                <option value="19">19% - General</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Por favor, seleccione los impuestos aplicables.
-                                            </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="codigoUnicoServicio" class="form-label">Código único *</label>
+                                        <input type="text" class="form-control" id="codigoUnicoServicio" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el código único.
                                         </div>
-                                        <div class="col-3 mt-3">
-                                            <label for="precioVenta" class="form-label">Precio de venta *</label>
-                                            <input type="number" class="form-control" id="precioVenta" required min="0"
-                                                step="0.01">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="codigoUNSPSCServicio" class="form-label">Código UNSPSC *</label>
+                                        <input type="text" class="form-control" id="codigoUNSPSCServicio" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el código UNSPSC.
                                         </div>
-                                        <div class="col-3 mt-3">
-                                            <label for="unidadMedidaNuevo" class="form-label">Unidad de
-                                                Medida *</label>
-                                            <select class="form-select" id="unidadMedidaNuevo" required>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="unidadMedidaNuevo" class="form-label">Unidad de Medida *</label>
+                                        <select class="form-select" id="unidadMedidaNuevo" required>
+                                            <option value="">Seleccione unidad</option>
+                                            <!-- Las opciones se cargarán dinámicamente -->
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="categoria" class="form-label">Categoría *</label>
+                                        <select class="form-select" id="categoria" required>
+                                            <option value="">Seleccione una categoría</option>
+                                            <!-- Las opciones se cargarán dinámicamente -->
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor, seleccione una categoría.
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mt-3">
+                                        <label for="categoriasSeleccionadas" class="form-label">Categorias
+                                            Seleccionadas</label>
+                                        <table id="categoriasSeleccionadas" class="table table-sm table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Categoría</th>
+                                                    <th>Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Las categorías seleccionadas se mostrarán aquí -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="precioBaseServicio" class="form-label">Precio base *</label>
+                                        <input type="number" class="form-control" id="precioBaseServicio" required
+                                            min="0" step="0.01">
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese un precio base válido.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="impuestosAplicablesServicio" class="form-label">Impuestos
+                                            aplicables*</label>
+                                        <select class="form-select" id="impuestosAplicablesServicio" required>
+                                            <option value="0">0% - Exento</option>
+                                            <option value="5">5% - Reducido</option>
+                                            <option value="19">19% - General</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor, seleccione los impuestos aplicables.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="precioVentaServicio" class="form-label">Precio de venta
+                                            *</label>
+                                        <input type="number" class="form-control" id="precioVentaServicio" required
+                                            min="0" step="0.01">
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese un precio de venta válido.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="descripcionServicio" class="form-label">Descripción *</label>
+                                    <textarea class="form-control" id="descripcionServicio" rows="3"
+                                        required></textarea>
+                                    <div class="invalid-feedback">
+                                        Por favor, ingrese una descripción.
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-secondary" id="opcionesAvanzadasServicio" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#opcionesAvanzadasServicioCollapse"
+                                    aria-expanded="false" aria-controls="opcionesAvanzadasServicioCollapse">
+                                    Opciones avanzadas
+                                </button>
+
+                                <div class="collapse collapse-horizontal" id="opcionesAvanzadasServicioCollapse">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="imagenServicio" class="form-label">Imagen de
+                                                servicio</label>
+                                            <input type="file" class="form-control" id="imagenServicio"
+                                                accept="image/*">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="unidadMedidaServicio" class="form-label">Unidad de
+                                                Medida</label>
+                                            <select class="form-select" id="unidadMedidaServicio">
                                                 <!-- Las opciones se cargarán dinámicamente -->
                                             </select>
                                         </div>
+                                        <div class="col-md-12">
+                                            <label for="codigoGtinServicios" class="form-label">Codigo GTIN</label>
+                                            <input type="number" class="form-control" id="codigoGtinServicios" min="0"
+                                                step="0.01">
+                                        </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="descripcion" class="form-label">Descripción *</label>
-                                        <textarea class="form-control" id="descripcion" rows="3" required></textarea>
+                                </div>
+                                <div class="container-fluid text-center mt-3">
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="validarYGuardarServicio()">Guardar Servicio</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- tab Combos -->
+                        <div class="tab-pane fade" id="combo" role="tabpanel" aria-labelledby="combo-tab">
+                            <form action="" id="form-combos">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="nombreCombo" class="form-label">Nombre del combo *</label>
+                                        <input type="text" class="form-control" id="nombreCombo" required>
                                         <div class="invalid-feedback">
-                                            Por favor, ingrese una descripción.
+                                            Por favor, ingrese el nombre del combo.
                                         </div>
                                     </div>
-
-                                    <button class="btn btn-outline-secondary" id="opcionesAvanzadasProducto"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#opcionesAvanzadasProductoCollapse" aria-expanded="false"
-                                        aria-controls="opcionesAvanzadasProductoCollapse">
-                                        Opciones avanzadas
-                                    </button>
-
-                                    <div>
-                                        <div class="collapse collapse-horizontal"
-                                            id="opcionesAvanzadasProductoCollapse">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <label for="imagenProducto" class="form-label">Imagen del
-                                                        producto</label>
-                                                    <input type="file" class="form-control" id="imagenProducto"
-                                                        accept="image/*">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="cantidadInicialProducto" class="form-label">Cantidad
-                                                        Inicial</label>
-                                                    <input type="number" class="form-control"
-                                                        id="cantidadInicialProducto" min="0" step="0.01">
-                                                </div>
-                                                <div class="col-md-12 mt-3">
-                                                    <label for="codigoUNSPSC" class="form-label">Codigo UNSPSC</label>
-                                                    <input type="number" class="form-control" id="codigoUNSPSC" min="0"
-                                                        step="0.01">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="container-fluid text-center mt-3">
-                                        <button type="button" class="btn btn-primary"
-                                            onclick="validarYGuardarProductos()">Guardar cambios</button>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <!-- tab Servicio -->
-                            <div class="tab-pane fade" id="servicio" role="tabpanel" aria-labelledby="servicio-tab">
-                                <form action="" id="form-servicios">
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label for="nombreServicio" class="form-label">Nombre del servicio *</label>
-                                            <input type="text" class="form-control" id="nombreServicio" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese el nombre del servicio.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="codigoUnicoServicio" class="form-label">Código único *</label>
-                                            <input type="text" class="form-control" id="codigoUnicoServicio" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese el código único.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="codigoUNSPSCServicio" class="form-label">Código UNSPSC *</label>
-                                            <input type="text" class="form-control" id="codigoUNSPSCServicio" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese el código UNSPSC.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="categoriaServicio" class="form-label">Categoría *</label>
-                                            <select class="form-select" id="categoriaServicio" required>
-                                                <option value="">Seleccione una categoría</option>
-                                                <!-- Opciones de categoría se cargarán dinámicamente -->
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Por favor, seleccione una categoría.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <div class="col-md-4">
-                                            <label for="precioBaseServicio" class="form-label">Precio base *</label>
-                                            <input type="number" class="form-control" id="precioBaseServicio" required
-                                                min="0" step="0.01">
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese un precio base válido.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label for="impuestosAplicablesServicio" class="form-label">Impuestos
-                                                aplicables (DIAN) *</label>
-                                            <select class="form-select" id="impuestosAplicablesServicio" required>
-                                                <option value="0">0% - Exento</option>
-                                                <option value="5">5% - Reducido</option>
-                                                <option value="19">19% - General</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Por favor, seleccione los impuestos aplicables.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label for="precioVentaServicio" class="form-label">Precio de venta
-                                                *</label>
-                                            <input type="number" class="form-control" id="precioVentaServicio" required
-                                                min="0" step="0.01">
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese un precio de venta válido.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="descripcionServicio" class="form-label">Descripción *</label>
-                                        <textarea class="form-control" id="descripcionServicio" rows="3"
-                                            required></textarea>
+                                    <div class="col-md-6">
+                                        <label for="codigoUnicoCombo" class="form-label">Código único *</label>
+                                        <input type="text" class="form-control" id="codigoUnicoCombo" required>
                                         <div class="invalid-feedback">
-                                            Por favor, ingrese una descripción.
+                                            Por favor, ingrese el código único.
                                         </div>
                                     </div>
-                                    <button class="btn btn-outline-secondary" id="opcionesAvanzadasServicio"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#opcionesAvanzadasServicioCollapse" aria-expanded="false"
-                                        aria-controls="opcionesAvanzadasServicioCollapse">
-                                        Opciones avanzadas
-                                    </button>
-
-                                    <div class="collapse collapse-horizontal" id="opcionesAvanzadasServicioCollapse">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <label for="imagenServicio" class="form-label">Imagen de
-                                                    servicio</label>
-                                                <input type="file" class="form-control" id="imagenServicio"
-                                                    accept="image/*">
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="unidadMedidaServicio" class="form-label">Unidad de
-                                                    Medida</label>
-                                                <select class="form-select" id="unidadMedidaServicio">
-                                                    <!-- Las opciones se cargarán dinámicamente -->
-                                                </select>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <label for="codigoGtinServicios" class="form-label">Codigo GTIN</label>
-                                                <input type="number" class="form-control" id="codigoGtinServicios"
-                                                    min="0" step="0.01">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="container-fluid text-center mt-3">
-                                        <button type="button" class="btn btn-primary"
-                                            onclick="validarYGuardarServicio()">Guardar Servicio</button>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <!-- tab Combos -->
-                            <div class="tab-pane fade" id="combo" role="tabpanel" aria-labelledby="combo-tab">
-                                <form action="" id="form-combos">
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label for="nombreCombo" class="form-label">Nombre del combo *</label>
-                                            <input type="text" class="form-control" id="nombreCombo" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese el nombre del combo.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="codigoUnicoCombo" class="form-label">Código único *</label>
-                                            <input type="text" class="form-control" id="codigoUnicoCombo" required>
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese el código único.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label for="precioBaseCombo" class="form-label">Precio base *</label>
-                                            <input type="number" class="form-control" id="precioBaseCombo" required
-                                                min="0" step="0.01">
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese un precio base válido.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="categoriaCombo" class="form-label">Categoría *</label>
-                                            <select class="form-select" id="categoriaCombo" required>
-                                                <option value="">Seleccione una categoría</option>
-                                                <!-- Opciones de categoría se cargarán dinámicamente -->
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Por favor, seleccione una categoría.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <label for="precioVentaCombo" class="form-label">Precio de venta *</label>
-                                            <input type="number" class="form-control" id="precioVentaCombo" required
-                                                min="0" step="0.01">
-                                            <div class="invalid-feedback">
-                                                Por favor, ingrese un precio de venta válido.
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="impuestosAplicablesCombo" class="form-label">Impuestos
-                                                aplicables (DIAN) *</label>
-                                            <select class="form-select" id="impuestosAplicablesCombo" required>
-                                                <option value="0">0% - Exento</option>
-                                                <option value="5">5% - Reducido</option>
-                                                <option value="19">19% - General</option>
-                                            </select>
-                                            <div class="invalid-feedback">
-                                                Por favor, seleccione los impuestos aplicables.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="itemsCombo" class="form-label">Agregar productos o servicios al
-                                            combo *</label>
-                                        <div class="input-group mb-3">
-                                            <select class="form-select" id="itemCombo" required>
-                                                <option value="">Seleccione un producto o servicio</option>
-                                                <!-- Opciones se cargarán dinámicamente -->
-                                            </select>
-                                            <input type="number" class="form-control" id="cantidadItemCombo"
-                                                placeholder="Cantidad" min="1" value="1" required>
-                                            <button class="btn btn-outline-secondary" type="button"
-                                                onclick="agregarItemAlCombo()">Agregar</button>
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <h6>Productos y servicios en el combo:</h6>
-                                        <ul id="listaItemsCombo" class="list-group">
-                                            <!-- Los items del combo se agregarán aquí dinámicamente -->
-                                        </ul>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="descripcionCombo" class="form-label">Descripción *</label>
-                                        <textarea class="form-control" id="descripcionCombo" rows="3"
-                                            required></textarea>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="precioBaseCombo" class="form-label">Precio base *</label>
+                                        <input type="number" class="form-control" id="precioBaseCombo" required min="0"
+                                            step="0.01">
                                         <div class="invalid-feedback">
-                                            Por favor, ingrese una descripción.
+                                            Por favor, ingrese un precio base válido.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label for="impuestosAplicablesCombo" class="form-label">Impuestos
+                                            aplicables*</label>
+                                        <select class="form-select" id="impuestosAplicablesCombo" required>
+                                            <option value="0">0% - Exento</option>
+                                            <option value="5">5% - Reducido</option>
+                                            <option value="19">19% - General</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor, seleccione los impuestos aplicables.
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-outline-secondary mb-3" id="opcionesAvanzadasCombo"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#opcionesAvanzadasComboCollapse" aria-expanded="false"
-                                        aria-controls="opcionesAvanzadasComboCollapse">
-                                        Opciones avanzadas
-                                    </button>
-
-                                    <div class="collapse collapse-horizontal" id="opcionesAvanzadasComboCollapse">
-                                        <div class="mb-3">
-                                            <label for="imagenCombo" class="form-label">Imagen del combo</label>
-                                            <input type="file" class="form-control" id="imagenCombo" accept="image/*">
+                                    <div class="col-md-4">
+                                        <label for="precioVentaCombo" class="form-label">Precio de venta *</label>
+                                        <input type="number" class="form-control" id="precioVentaCombo" required min="0"
+                                            step="0.01">
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese un precio de venta válido.
                                         </div>
                                     </div>
-
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button" class="btn btn-primary"
-                                            onclick="validarYGuardarCombo()">Guardar
-                                            cambios</button>
+                                </div>
+                                <div class="row mb-3">
+                                    
+                                    <div class="col-md-6 mt-3">
+                                        <label for="categoria" class="form-label">Categoría *</label>
+                                        <select class="form-select" id="categoria" required>
+                                            <option value="">Seleccione una categoría</option>
+                                            <!-- Las opciones se cargarán dinámicamente -->
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor, seleccione una categoría.
+                                        </div>
                                     </div>
-                                </form>
-                            </div>
+                                    <div class="col-6 mt-3">
+                                        <label for="categoriasSeleccionadas" class="form-label">Categorias
+                                            Seleccionadas</label>
+                                        <table id="categoriasSeleccionadas" class="table table-sm table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Categoría</th>
+                                                    <th>Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Las categorías seleccionadas se mostrarán aquí -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="itemsCombo" class="form-label">Agregar productos o servicios al
+                                        combo *</label>
+                                    <div class="input-group mb-3">
+                                        <select class="form-select" id="itemCombo" required>
+                                            <option value="">Seleccione un producto o servicio</option>
+                                            <!-- Opciones se cargarán dinámicamente -->
+                                        </select>
+                                        <input type="number" class="form-control" id="cantidadItemCombo"
+                                            placeholder="Cantidad" min="1" value="1" required>
+                                        <button class="btn btn-outline-secondary" type="button"
+                                            onclick="agregarItemAlCombo()">Agregar</button>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <h6>Productos y servicios en el combo:</h6>
+                                    <ul id="listaItemsCombo" class="list-group">
+                                        <!-- Los items del combo se agregarán aquí dinámicamente -->
+                                    </ul>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="descripcionCombo" class="form-label">Descripción *</label>
+                                    <textarea class="form-control" id="descripcionCombo" rows="3" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Por favor, ingrese una descripción.
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-outline-secondary mb-3" id="opcionesAvanzadasCombo" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#opcionesAvanzadasComboCollapse"
+                                    aria-expanded="false" aria-controls="opcionesAvanzadasComboCollapse">
+                                    Opciones avanzadas
+                                </button>
+
+                                <div class="collapse collapse-horizontal" id="opcionesAvanzadasComboCollapse">
+                                    <div class="mb-3">
+                                        <label for="imagenCombo" class="form-label">Imagen del combo</label>
+                                        <input type="file" class="form-control" id="imagenCombo" accept="image/*">
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="validarYGuardarCombo()">Guardar
+                                        cambios</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/tabulator-tables@5.0.7/dist/js/tabulator.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
-            integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-        <script src="./assets/js/menu.js"></script>
-        <script src="./assets/js/scripts2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/tabulator-tables@5.0.7/dist/js/tabulator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+        integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/scripts2.js"></script>
 
 </body>
 
